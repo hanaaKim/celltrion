@@ -1,0 +1,27 @@
+
+/*============reset============*/
+*{    margin:0; padding: 0;
+    box-sizing: border-box; }
+li{    list-style: none;    }
+a{	text-decoration: none; color: #000;	}
+html, body{ height: 100%; font-size: 13px; }
+
+/*float 속성 해제 클래스*/
+.clear:after{content: ''; display: block; clear: both;} 
+
+/* up버튼 */
+.upBtn{
+    position: fixed;
+    bottom: 15px; right: 15px;
+    width: 35px; height: 35px;
+    /* outline: 1px solid red; */
+    z-index: 900;
+}
+
+.upBtn i{
+    display: block; width: 100%; height: 100%;
+    text-align: center; line-height: 1.7;
+    font-size: 2.3rem; color:#50b948;
+    background: rgba(255,255,255,0.4);
+    border-radius: 100%; cursor: pointer;
+}

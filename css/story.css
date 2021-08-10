@@ -1,0 +1,188 @@
+@import "reset.css"; 
+/* 기본 font-size : 13px */
+
+
+/* article */
+section article{
+    position: relative;
+    top:0; left:0;
+    width:100%; height: 100vh;
+    background: white;
+    overflow: hidden;
+}
+/*---------------------article1---------------------*/
+.at1{
+    background: url(../img/story/bg11.png) no-repeat left bottom;
+    background-size: contain;
+}
+
+.at1 .cont_img1{
+    position: relative;
+    top:0; left:100%;
+    width: 50%; height: 100%;
+    background: url(../img/story/img1.png) no-repeat right;
+    background-size: cover;
+}
+.at1 .txt1{ top:20%; left:20%;}
+
+/*-----공통요소 - 텍스트박스----- */
+.con_txt{
+    position: absolute;
+    width: 35%; height: auto;
+    opacity: 0;
+}
+/* 내부 텍스트들 */
+.con_txt .inner{
+    width: 100%; height: 100%;
+    padding: 40px 30px;
+    background: rgba(255,255,255,0.4);
+}
+.con_txt .inner h2{ font-size: 2.5rem; padding-bottom: 30px;}
+.con_txt .inner p{font-size: 1.2rem;}
+.green_txt{ color: #55b954;}
+
+/* 테두리 선들 */
+.con_txt .line01{
+    position: relative;
+    width: 0; height:2px;
+    background: #ccc;
+}
+
+.con_txt .line02{
+    position: absolute; right: 0; top: 0;
+    width: 2px; height: 0; 
+    background: #55b954;
+}
+
+.con_txt .line03{
+    position: absolute; bottom: 0; right: 0;
+    width: 0; height: 2px; 
+    background: #ccc;
+}
+
+.con_txt .line04{
+    position: absolute; bottom: 0; left: 0;
+    width: 2px; height: 0; 
+    background: #ccc;
+}
+
+/*---------------------article2---------------------*/
+.at2{ 
+    background: url(../img/story/bg22.png) no-repeat right top;
+    background-size: contain;
+}
+
+.at2 .cont_img2{
+    position: relative;
+    top:0; left:-40%;
+    width: 40%; height: 100%;
+    background: url(../img/story/img2.png) no-repeat left;
+    background-size: cover;
+    float: left;
+}
+.at2 .cont_img3{
+    position: relative;
+    top:0; left:40%;
+    width: 40%; height: 100%;
+    background: url(../img/story/img3.png) no-repeat bottom;
+    background-size: contain;
+    float: right;
+}
+
+.at2 .txt2{ top:25%; left:42%}
+/*---------------------article3---------------------*/
+.at3{
+    background: url(../img/story/world1.png) no-repeat bottom;
+    background-size: cover;
+}
+
+.at3 .cont_img4{
+    position: relative;
+    top:0; left:-50%;
+    width: 50%; height: 100%;
+    background: url(../img/story/img4.png) no-repeat left;
+    background-size: cover;
+}
+
+.at3 .txt3{ top:10%; right:5%}
+/*---------------------article4---------------------*/
+.at4{
+    background: url(../img/story/world2.png) no-repeat top;
+    background-size: cover;
+}
+.at4 .at4_bg{
+    position: absolute;
+    width: 100%; height: 100%;
+    background: url(../img/story/bg33.png) no-repeat right bottom;
+    background-size: contain;
+    z-index: 2;
+}
+
+.at4 .cont_img5{
+    position: absolute;
+    bottom:0; left:7%;
+    width: 40%; height: 70%;
+    background: url(../img/story/img5.png) no-repeat bottom;
+    background-size: contain;
+    z-index: 3; opacity: 0;
+}
+
+.at4 .txt4{ top:25%; right:13%; z-index: 4;}
+
+/*----------미디어쿼리---------- */
+/* 테블릿 */
+@media screen and (min-width: 768px) and (max-width:1023px){  
+    /*---------------------article1---------------------*/
+    .at1 .cont_img1{ left: 100%; width: 60%;}
+    .at1 .txt1{ top:40%; left:10%;}
+    /*-----공통요소 - 텍스트박스----- */
+    .con_txt{width:50%;}
+    .con_txt .inner h2{ font-size: 2rem;}
+    .con_txt .inner p{font-size: 1rem;}
+    /*---------------------article2---------------------*/
+    .at2 .cont_img2{ left:-50%; width: 50%;}
+    .at2 .txt2{ top:35%; left:45%}
+    /*---------------------article3---------------------*/
+    .at3 .cont_img4{ left:-60%; width: 60%;}
+    /*---------------------article4---------------------*/
+    .at4 .cont_img5{width: 55%; height: 60%;}
+    .at4 .txt4{ top:15%; right:5%;}
+}
+/* 모바일 */
+@media screen and (max-width:767px){  
+    /*---------------------article1---------------------*/
+    .at1 .cont_img1{
+        top:0; left:-100%;
+        width: 100%; height: 50%;
+    }
+    .at1 .txt1,.at2 .txt2,.at3 .txt3,.at4 .txt4{ top:55%; left: 5%;}
+    /*-----공통요소 - 텍스트박스----- */
+    .con_txt{width: 90%;}
+    /* 내부 텍스트들 */
+    .con_txt .inner{padding: 25px;}
+    .con_txt .inner h2{ font-size: 1.6rem; padding-bottom: 15px;}
+    .con_txt .inner p{font-size: 1rem;}
+
+    /*---------------------article2---------------------*/
+    .at2 .cont_img2{
+        left:-100%;
+        width: 100%; height: 50%;
+        background: url(../img/story/img2.png) no-repeat left bottom;
+        background-size: cover;
+    }
+    .at2 .cont_img3{opacity: 0;}
+    /*---------------------article3---------------------*/
+    .at3 .cont_img4{
+        left:-100%;
+        width: 100%; height: 50%;
+        background: url(../img/story/img4.png) no-repeat left center;
+    }
+    /*---------------------article4---------------------*/
+    .at4 .cont_img5{
+        top:10%; left:10%;
+        width: 90%; height: 50%;
+        background: url(../img/story/img5.png) no-repeat center center;
+        background-size: contain;
+        opacity: 0;
+    }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+    
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/default.js"></script>
+    <script src="js/LoginJoin.js"></script>
+    
+</head>
+<body>
+    <div id="wrap">
+        <!--menu 따로 분리 후 html연결-->
+        <div class="menu"></div>
+        <div class="upBtn"><i class="fas fa-sort-up"></i></div>
+
+        <div class="login_bg">
+            <ul class="login_Bbox">
+                <li>
+                    <ul class="login_Sbox">
+                        <li><img src="img/logo_black.png" alt=""></li>
+                        <li>
+                            <span><i class="fas fa-user-circle"></i></span>
+                            <input type="text" placeholder="아이디" id="userId" autofocus>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-unlock-alt"></i></span>
+                            <input type="password" placeholder="비밀번호" id="userPw">
+                        </li>
+                        <li><a href="#" class="loginBtn">로그인</a></li>
+                        <li><a href="javascript:alert('Sorry, unavailable :(');">Forgot your Username or Password?</a></li>
+                        <li><a href="join.html" class="joinBtn">Sign up</a></li>
+                    </ul>
+                </li>
+                <li></li>
+            </ul>
+            
+        </div>
+        
+        <!--footer 따로 분리 후 html연결-->
+        <div class="footer"></div>
+    </div>
+</body>
+</html>

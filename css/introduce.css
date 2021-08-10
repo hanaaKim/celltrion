@@ -1,0 +1,268 @@
+@import "reset.css"; 
+/* 기본 font-size : 13px */
+
+/* article */
+section article{
+    position: relative;
+    width:100%; height: 100vh;
+}
+/*---------------------article1---------------------*/
+.at1{ background:-webkit-linear-gradient(bottom, #425982 7%, #6379a0  30%, #425982  55%, #1d2a56 95%); }
+
+.at1 .bg{
+    width: 100%; height: 100vh;
+    background: url(../img/introduce/at1_bg.png) no-repeat top left;
+    background-size: cover;
+}
+.at1 .at1_cont1{
+    position: absolute; top:35%; right: 10%;
+    text-align: right; color: #ddd;
+}
+.at1 .at1_cont1 h2{ font-size: 1.5rem; padding: 10px 15px 10px 0; }
+.at1 .at1_cont1 p{
+    line-height: 1.5;
+    border-right: 5px solid #f38d36;
+    padding-right: 10px; font-size: 1.8rem;
+}
+
+.at1 .at1_cont2{
+    position: absolute; bottom:15%; left: 12.5%;
+    width: 75%; color: #ddd;
+}
+.at1 .at1_cont2 p{ padding: 10px 0; font-size: 1.8rem;}
+.at1 .at1_cont2 ul{ 
+    width: 100%; height: 70px;
+    display: flex; flex-wrap: wrap;
+    align-items: center;
+}
+.at1 .at1_cont2 ul li {
+    flex:0 0 33.33%;
+    text-align: left; line-height: 20px; padding: 5px 0;
+    /* outline: 1px solid red; */
+}
+.at1 .at1_cont2 ul li:last-child{ flex:  0 0 66%;}
+.at1 .at1_cont2 ul li .at1_title{ font-size: 1.2rem; padding-right: 10px;}
+.at1 .at1_cont2 ul li .at1_txt{font-size: 1rem; color:#ddd}
+
+/*---------------------article2---------------------*/
+.at2{
+    position: relative;
+    background:-webkit-linear-gradient(bottom, #425982 5%, #6379a0  30%, #89a1cb  55%, #425982 100%);
+}
+.at2>.dna_bg{
+    width: 100%; height: 100vh;
+    background:url(../img/introduce/dna_bg1.png) no-repeat bottom;
+    background-size: cover;
+    filter: opacity(6%);
+}
+.at2 .at2_box{
+    position: relative; top:25%; left:50%;
+    transform: translateX(-50%);
+    width: 950px; height: 220px;
+    display: flex; flex-wrap: wrap;
+    justify-content:space-between;
+}
+
+.at2 .at2_box li{
+    position: relative; 
+    flex:0 0 220px; border-radius: 65% 35% 60% 40%;
+    animation: at2_Ani 10s 1s linear infinite;
+}
+
+/* 물방울 모양 애니메이션 */
+@keyframes at2_Ani{
+    0% { border-radius: 65% 35% 60% 40%;}
+    25% { border-radius: 35% 65% 40% 60%;}
+    50% { border-radius: 60% 40% 65% 35%;}
+    75% { border-radius: 40% 60% 35% 65%;}
+}
+.at2 .at2_box li:nth-child(1){    background:url(../img/introduce/img3.jpg) center center; background-size: contain;}
+.at2 .at2_box li:nth-child(2){    background:url(../img/introduce/img2.jpg) center center; background-size: contain;}
+.at2 .at2_box li:nth-child(3){    background:url(../img/introduce/img1.jpg) center center; background-size: contain;}
+.at2 .at2_box li:nth-child(4){    background:url(../img/introduce/img0.jpg) center center; background-size: contain;}
+
+/*물방울 모양 가상요소  */
+.at2 .at2_box li::after{
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+    width: 100%; height: 100%; 
+    border-radius: 65% 35% 60% 40%;
+    background: rgba(0,0,0,0.3);
+    transition: all 0.5s;
+    text-align: center; line-height: 390px;
+    font-size: 1.3rem; color:#ddd;
+    animation: at2_Ani 20s 1s linear infinite;
+}
+
+.at2 .at2_box li:nth-child(1):after{content:'창의성';}
+.at2 .at2_box li:nth-child(2):after{content:'원칙준수';}
+.at2 .at2_box li:nth-child(3):after{content:'도전정신';}
+.at2 .at2_box li:nth-child(4):after{content:'세계제일주의';}
+.at2 .at2_box li:hover:after{ top:40px;}
+
+.at2 div{
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 130px;
+    /* outline: 1px solid red; */
+    background: url(../img/introduce/wave3.png) repeat-x;
+    background-size: cover;
+}
+
+/*---------------------article3---------------------*/
+.at3{
+    position: relative;
+    top:0; left:0;
+    background:-webkit-linear-gradient(bottom, #112f2f 0%, #425982 30%, #6379a0 55%, #425982 100%);
+}
+.at3 .bg{
+    position: absolute;
+    width: 100%; height: 100vh;
+    background: url(../img/introduce/at3_bg.png) no-repeat center left;
+    background-size: cover;
+}
+.at3 .dna_bg{
+    width: 100%; height: 100vh;
+    background:url(../img/introduce/dna_bg2.png) no-repeat top;
+    background-size: cover;
+    filter: opacity(6%);
+}
+.at3 .at3_cont1{
+    position: absolute; top:20%; left: 50%;
+    transform: translateX(-50%);
+    width: 70%; 
+    /* outline: 1px solid red; */
+    padding: 10px 0; color:#ddd;
+}
+.at3 .at3_cont1 h2{
+    /* padding-bottom: 5px; */
+    font-size: 1.8rem;
+    /* outline: 1px solid red; */
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.at3 .at3_cont1 p{
+    padding-top: 5px;
+    line-height: 1.5;
+}
+
+.at3 .at3_cont2{
+    position: absolute; top:40%; left: 50%;
+    transform: translateX(-50%);
+    width: 70%; 
+    color:#ddd;
+}
+.at3 .at3_cont2 h2{
+    border-bottom: 1px solid #ddd;
+    padding:10px 0 5px 0; font-size: 1.8rem;
+}
+.at3 .at3_cont2 ul{
+    width: 100%; height: 200px;
+}
+.at3 .at3_cont2 ul li{
+    float: left;
+    width: 50%; height: 50%;
+    padding: 10px;
+}
+.at3 .at3_cont2 ul li div{
+    float: left;
+    width: 70px; height: 70px;
+    /* outline: 1px solid red; */
+    margin: 5px 12px 0 0;
+}
+.at3 .at3_cont2 ul li p:nth-child(2){
+    font-size: 1.1rem; font-weight: bold;
+    /* outline: 1px solid red; */
+    padding-bottom: 5px;
+}
+.at3 .at3_cont2 ul li p:nth-child(2) span{
+    font-size: 0.9rem; font-weight: normal;
+}
+
+/*----------미디어쿼리---------- */
+@media screen and (min-width: 768px) and (max-width:1023px){   
+    /* 테블릿 */
+    /* article */
+    article{height: 100%;}
+    /*---------------------article1---------------------*/
+    .at1 .at1_cont1 h2{ font-size: 1.5rem; }
+    .at1 .at1_cont1 p{font-size: 1rem;}
+    .at1 .at1_cont2{ position: absolute; bottom:15%; left: 10%; width: 80%; }
+    .at1 .at1_cont2 p{ font-size: 1.3rem; }
+    .at1 .at1_cont2 ul li .at1_title{ font-size: 1rem; }
+    .at1 .at1_cont2 ul li .at1_txt{ font-size: 1rem; }
+    
+
+    /*---------------------article2---------------------*/
+    .at2 .at2_box{
+        position: relative; top:25%; left:50%;
+        transform: translateX(-50%);
+        width: 720px; height: 160px;
+    }
+    .at2 .at2_box li{ flex:0 0 160px; }
+    .at2 .at2_box li::after{ line-height: 270px; font-size: 1rem; }
+    
+    /*---------------------article3---------------------*/
+    .at3 .at3_cont1{ width: 80%; }
+    .at3 .at3_cont1 h2{font-size: 1.4rem; }
+    .at3 .at3_cont1 p{font-size: 1rem; }
+
+    .at3 .at3_cont2{ width: 80%; }
+    .at3 .at3_cont2 h2{font-size: 1.4rem;}
+    .at3 .at3_cont2 ul li p:nth-child(2){ font-size: 1rem; }
+
+}
+
+@media screen and (max-width:767px){   
+    /* 모바일 */
+    /* article */
+    article{height: 100%;}
+    /*---------------------article1---------------------*/
+    .at1 .at1_cont1{position: absolute; top:40%; right: 10%;}
+    .at1 .at1_cont1 p{font-size: 1rem;}
+    .at1 .at1_cont2{ position: absolute; bottom:20%; left: 10%; width: 80%;}
+    .at1 .at1_cont2 p{ font-size: 1.3rem; }
+    .at1 .at1_cont2 ul li {flex: 0 0 100%; text-align: left;  }
+    .at1 .at1_cont2 ul li:last-child{ flex:  0 0 100%;}
+
+    .at1 .at1_cont2 ul li .at1_title{ font-size: 1rem;}
+    .at1 .at1_cont2 ul li .at1_txt{ font-size: 1rem;}
+
+    /*---------------------article2---------------------*/
+    .at2 .at2_box{
+        width: 320px; height: 420px;
+        justify-content:space-between;
+    }
+    
+    .at2 .at2_box li{ flex:0 0 150px; margin-bottom: 60px; }
+    .at2 .at2_box li::after{line-height: 240px; }
+    .at2 .at2_box li:hover:after{ top:50px;}
+
+    /*---------------------article3---------------------*/
+    .at3 .at3_cont1{ top:13%; width: 80%; }
+    .at3 .at3_cont1 h2{font-size: 1.5rem; }
+    .at3 .at3_cont2{top:37%; width: 80%; }
+    .at3 .at3_cont2 h2{font-size: 1.5rem;}
+
+    .at3 .at3_cont2 ul{
+        width: 100%; height: auto;
+        display: flex; flex-wrap: wrap;
+    }
+    .at3 .at3_cont2 ul li{ flex: 0 0 50%; padding: 5px 10px; }
+    .at3 .at3_cont2 ul li div{
+        position: relative; top:0; left: 50%;
+        transform: translateX(-50%);
+        width: 60px; height: 60px;
+        margin-bottom: 10px;
+    }
+    .at3 .at3_cont2 ul li p:nth-child(2){
+        clear: both;
+        font-size: 1rem;
+        text-align: center;
+        padding-bottom: 5px;
+    }
+    .at3 .at3_cont2 ul li p:nth-child(2) span{display: none; }
+    .at3 .at3_cont2 ul li p:nth-child(3){text-align: center; font-size: 0.8rem;}
+}

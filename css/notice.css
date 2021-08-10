@@ -1,0 +1,169 @@
+@import "reset.css"; 
+/* 기본 font-size : 13px */
+/* up버튼 - reset.css에 포함 */
+
+/* section */
+section{
+    width: 100%; height: 100vh;
+    position: relative;
+}
+/* article */
+article{
+    width:100%;
+    background: white;
+    position: relative;
+}
+/*---------------------article1---------------------*/
+.at1{}
+/* 상단이미지 */
+.at1 .topbg{
+    width: 100%; height: 350px;
+    background: url(../img/notice_bg.png) no-repeat top;
+    background-size: cover;
+}
+
+/* 상단 텍스트 박스 */
+.at1_box{
+    position: relative;
+    margin: 5% 15%; width: 70%; height: 40%;
+}
+.at1_box span{
+    position: relative; top:-17px; left:0;
+    display: inline-block;
+    width: 40px; 
+    border-bottom: 3px solid #f38d36;
+    margin-right: 10px;
+}
+.at1_box p:nth-child(2){
+    display: inline-block;
+    font-size: 4rem; padding-top:50px; 
+    text-shadow: 3px 5px 5px rgb(0 0 0 / 50%);
+}
+.at1_box p:nth-child(3){ padding-top:30px; font-size: 1.5rem;}
+
+/* 게시판 큰 박스 */
+.notice_box{ 
+    width: 80%; margin: auto;
+    background: #fff;
+    border-top: 3px solid gray;
+}
+
+/* 타이틀 div */
+.table_layout>.table_title>div{ 
+    float: left; 
+    height: 80px; line-height: 80px;
+    font-size: 1.8rem; text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+.table_layout>.table_title>.num{ width:10%; }
+.table_layout>.table_title>.part{ width:20%; }
+.table_layout>.table_title>.subject{ width:55%; }
+.table_layout>.table_title>.date{ width:15%; }
+
+/* 게시판 테이블 박스 */
+.table_layout>ul{ display: none;} /*ul 4개 중 class="list"만 보이게 하기위해*/
+.table_layout>ul.list{  display: block; width: 100%;}
+.table_layout>ul.list>li{ 
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+}
+.table_layout>ul.list>li.table_tr:after{ content: ''; display: block; clear: both;}
+.table_layout>ul.list>li.table_tr>div{
+    float: left; font-size: 1.2rem;
+    padding: 20px 0;
+    
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+} 
+.table_layout>ul.list>li.table_tr:hover{ background: #f9f9f9;}
+.table_layout>ul>li .num{ width: 10%; text-align: center;}
+.table_layout>ul>li .part{ width: 20%; padding-left: 30px;}
+.table_layout>ul>li .subject{ width: 55%; padding-left: 30px;}
+.table_layout>ul>li .date{ width: 15%; text-align: center; }
+
+/* 버튼 */
+.button{width: 100%; text-align: center; padding: 50px 0;}
+.button .page_wrap{  width:480px; height:50px; margin: auto;}
+.button .page_wrap a{ 
+    width: 50px; height: 50px; margin-right:5px;
+    border:1px solid #ccc; 
+    display: inline-block;
+    text-align: center; line-height: 50px;
+}
+.button .page_wrap .btn a.active{ background: #eee;}
+/*----------미디어쿼리---------- */
+/* 테블릿 */
+@media screen and (min-width: 768px) and (max-width:1023px){   
+    /*---------------------article1---------------------*/
+    /* 상단이미지 */
+    .at1 .topbg{ height: 230px; }
+
+    /* 상단 텍스트 박스 */
+    .at1_box span{ width: 30px; }
+    .at1_box p:nth-child(2){ font-size: 3.5rem; }
+
+    /* 게시판 큰 박스 */
+    .notice_box{ 
+        width: 80%; margin: 70px auto;
+        background: #fff;
+        border-top: 3px solid gray;
+    }
+
+    /* 타이틀 div */
+    .table_layout>.table_title>div{ 
+        height: 60px; line-height: 60px;
+        font-size: 1.6rem; 
+    }
+    .table_layout>.table_title>.part{ width:30%; text-align: left;}
+    .table_layout>.table_title>.subject{ width:60%; }
+    .table_layout>.table_title>.date{display: none;}
+    .table_layout>ul.list>li.table_tr>div{
+        float: left; font-size: 1.2rem;
+        line-height:1.3; padding: 20px 0;
+    } 
+    .table_layout>ul>li .part{ width: 30%; text-align: left;}
+    .table_layout>ul>li .subject{ width: 60%; padding-left: 0px;}
+    .table_layout>ul>li .date{ display: none; }
+}
+/* 모바일 */
+@media screen and (max-width:767px){  
+    /*---------------------article1---------------------*/
+    /* 상단이미지 */
+    .at1 .topbg{ height: 200px;}
+
+    /* 상단 텍스트 박스 */
+    .at1_box{ margin: 5% 10%; width: 80%;}
+    .at1_box span{ width: 25px; }
+    .at1_box p:nth-child(2){ font-size: 2.5rem;}
+    .at1_box p:nth-child(3){ font-size: 1.3rem;}
+
+    /* 게시판 큰 박스 */
+    .notice_box{ 
+        width: 80%; margin: auto;
+        background: #fff;
+        border-top: 3px solid gray;
+    }
+
+    /* 타이틀 div */
+    .table_layout>.table_title>div{ 
+        height: 60px; line-height: 60px;
+        font-size: 1.4rem;
+    }
+    .table_layout>.table_title>.num{ display: none; }
+    .table_layout>.table_title>.part{ width:30%; }
+    .table_layout>.table_title>.subject{ width:70%; }
+    .table_layout>.table_title>.date{ display: none; }
+    .table_layout>ul.list>li.table_tr>div{font-size: 1rem;}
+    .table_layout>ul>li .num{ display: none;}
+    .table_layout>ul>li .part{ width: 30%;text-align: left }
+    .table_layout>ul>li .subject{ width: 70%;}
+    .table_layout>ul>li .date{ display: none;}
+
+    /* 버튼 */
+    .button{width: 100%; text-align: center;}
+    .button .page_wrap{  width:300px; height:30px;}
+    .button .page_wrap a{ 
+        width: 30px; height: 30px; margin-right:2px;line-height: 30px;
+    }
+}

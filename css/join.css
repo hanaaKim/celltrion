@@ -1,0 +1,270 @@
+@import "reset.css"; 
+/* 기본 font-size : 13px */
+/* up버튼 - reset.css에 포함 */
+
+#wrap{
+    position: relative;
+    width:100%; height: 100vh;
+}
+/* 배경 */
+.join_bg{
+    position: relative;
+    width: 100%; height: 1200px;
+    background:-webkit-linear-gradient(bottom, #112f2f 0%, #425982 30%, #6379a0 55%, #425982 100%);
+}
+/* 로그인-큰 박스 */
+.join_bg ul.join_Bbox{
+    position: relative;
+    top:200px; left:50%;
+    transform: translateX(-50%);
+    width: 80%; height: 900px;
+    display: flex;
+    box-shadow: 0px 0px 26px 15px rgb(0 0 0 / 20%)
+}
+
+/* 좌측 */
+.join_bg>ul.join_Bbox>li:nth-child(1){  
+    flex: 0 0 30%;
+    background: url(../img/join_bg.jpg) no-repeat center center;
+    background-size: cover;
+    filter: opacity(75%);
+}
+/* 우측 */
+.join_bg>ul.join_Bbox>li:nth-child(2){  flex: 0 0 70%; background: rgba(255, 255, 255,0.9);}
+.join_bg>ul.join_Bbox>li:nth-child(2) h2{ text-align: center; padding-top: 40px; font-size: 2.5rem; }
+
+/* 약관동의, 정보입력 */
+.join_menu{
+    margin: 30px auto 0 auto;
+    width: 300px; height: 50px;
+    display: flex;
+}
+.join_menu li{ 
+    flex: 1; font-size: 1.3rem;
+    text-align: center; line-height: 50px;
+}
+
+/* 컨텐츠 박스 */
+.join_cont{
+    position: relative;
+    width: 80%; height: 80%;
+    margin-left: 10%;
+    border-top: 3px solid gray;
+}
+.join_cont>li{ position: absolute; width: 100%;}
+
+/*-------------------약관동의 박스-------------------*/
+.cont1>ul{width: 100%; }
+.cont1>ul>li{  width: 100%; margin-bottom: 10px;
+/* outline: 1px solid red; */
+}
+
+/* 첫번째 li - 모든 약관 동의 */
+.cont1>ul>li:first-child{ 
+    height: 50px; 
+    margin-bottom: 0px; 
+    font-weight: bold;
+}
+/* 체크박스 - 공통*/
+.cont1>ul>li:first-child >input[type='checkbox'], .cont1>ul>li>p>input[type='checkbox']{
+    display: inline-block;
+    width: 20px;  height: 20px;
+    margin-right:10px;
+}
+.cont1>ul>li:first-child>span{
+    display: inline-block;
+    line-height: 50px; font-size: 1.2rem;
+
+}
+/* 나머지 li */
+.cont1>ul>li>p{
+    border-bottom:1px solid #ccc;
+    line-height: 50px; font-size: 1.2rem;
+}
+
+/* 약관 내용 박스 */
+.cont1>ul>li>div{
+    width: 100%; height: 200px;
+    overflow-y:  scroll;
+    padding: 15px;
+    border: 1px solid #ccc;
+}
+.cont1 >ul>li:last-child>div{ height: 80px; overflow:hidden }
+
+/* 다음 단계 버튼 & 회원 가입 완료 */
+.join_SuccessBtn,.join_nextBtn{
+    position: relative;
+    top: 60px;
+    display: block;
+    width: 50%; height: 50px;
+    margin: auto;
+    background: white;
+    border-radius: 20px;
+    text-align: center; line-height: 50px;
+    font-size: 1.2rem;
+}
+.join_nextBtn:hover,.join_SuccessBtn:hover{ background: #ccc;}
+
+/*-------------------회원 정보입력 박스-------------------*/
+.cont2 form{width: 85%; margin: auto; padding: 20px 0;
+    /* outline: 1px solid blue; */
+}
+/* 폼 박스의 한줄한줄 p태그 */
+.cont2 form p{
+    position: relative;
+    width: 100%; 
+    margin-bottom: 40px;
+    /* outline: 1px solid red; */
+}
+/* 각 칸의 이름 */
+.cont2 form p span.title{ 
+    display: inline-block;
+    width:25%; height: 100%; 
+    font-size: 1.2rem; 
+    /* outline: 1px solid green; */
+}
+.cont2 form p input[type="text"],.cont2 form p input[type="password"]{ 
+    display: inline-block;
+    width: 45%;
+    height: 40px; 
+    text-indent: 20px;
+    border:none; outline: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    /* outline: 1px solid orange; */
+}
+.cont2 form p input[type="button"]{
+    display: inline-block;
+    height: 40px;
+    padding: 6px;
+    border-radius: 12px;
+    border:none; outline: none;
+    background:rgb(226, 226, 226);
+    cursor: pointer;
+}
+
+.cont2 form p span.choice{
+    position: absolute;
+    top:105%; left:0;
+    width: 100%; text-align: right;
+    color: gray;
+}
+/* 휴대전화 */
+.cont2 form p select{
+    border-radius: 10px;
+    width: 20%; height: 30px; text-indent:10px; background: transparent;
+}
+/* 휴대전화 */
+.cont2 form p:nth-child(5) input[type="text"]{
+    display: inline-block;
+    width: 15%; height: 30px;
+    padding: 0 2px; margin-left: 2%;
+    text-indent: 10px;
+}
+/* 인증번호 */
+.cont2 form p:nth-child(6) input[type="button"]{ width: 20%; }
+/* 이메일 */
+.cont2 form p:nth-child(7) input[type="text"]{ width: 35%;}
+.cont2 form p:nth-child(7) select{ width: 30%;}
+
+
+/*----------미디어쿼리---------- */
+/* 테블릿 */
+@media screen and (min-width: 768px) and (max-width:1023px){   
+
+    /* 좌측 */
+    .join_bg>ul.join_Bbox>li:nth-child(1){ flex: 0 0 40%;}
+    /* 우측 */
+    .join_bg>ul.join_Bbox>li:nth-child(2){ position: relative; flex: 0 0 60%;}
+    .join_bg>ul.join_Bbox>li:nth-child(2)>.join_Sbox{
+        position: absolute;
+        right: 10%; top:5%;
+        width: 100%; height: 90%;
+        background: white;
+    }  
+
+    /* 컨텐츠 박스 */
+    .join_cont{ padding-top: 15px;}
+    /*-------------------약관동의 박스-------------------*/
+    /* 약관 동의 */
+    .cont1>ul>li:first-child{ height: 55px;}
+    .cont1>ul>li:first-child>span{line-height: 1; font-size: 1.1rem;}
+    .cont1>ul >li >p{ font-size: 1rem;}
+    .join_SuccessBtn,.join_nextBtn{top: 40px; width: 70%; background: #eee;}
+
+    /*-------------------회원 정보입력 박스-------------------*/
+    .cont2 form{width: 100%; }
+    .cont2 form p{ margin-bottom: 20px; }
+    .cont2 form p span.title{ display: none;}
+    .cont2 form p input[type="text"],.cont2 form p input[type="password"]{ width: 55%; }
+    .cont2 form p input[type="button"]{ width: 40%;}
+    .cont2 form p span.choice{ display: none;}
+    .cont2 form p:nth-child(5) input[type="text"]{ width: 23%;}
+    .cont2 form p:nth-child(5) input[type="button"]{ width: 22%;}
+    .cont2 form p:nth-child(6) input[type="text"]{ width: 66%; }
+    .cont2 form p:nth-child(6) input[type="button"]{ width: 30%;}
+    .cont2 form p:nth-child(7) input[type="text"]{ width: 55%;}
+    .cont2 form p:nth-child(7) select{ margin-left: 3%; width: 34%;}
+
+}
+/* 모바일 */
+@media screen and (max-width:767px){  
+    /* 배경 */
+    .join_bg{ height: 950px;} 
+    /* 로그인-큰 박스 */
+    .join_bg ul.join_Bbox{
+        display: block; top:80px; 
+        width: 90%; height: 800px;
+    }
+
+    /* 좌측 */
+    .join_bg>ul.join_Bbox>li:nth-child(1){  display: none; }
+    /* 우측 */
+    .join_bg>ul.join_Bbox>li:nth-child(2){ 
+        width: 100%; height: 100%;
+        background: url(../img/join_bg.jpg) no-repeat center center;
+        background-size: cover;
+    }
+    .join_bg>ul.join_Bbox>li:nth-child(2) h2{ font-size: 2rem; }
+    /* 컨텐츠 박스 */
+    .join_cont{
+        width: 90%; margin-left: 5%;
+        border-top: 3px solid #eee;
+        padding-top: 10px;
+    }
+    .cont1, .cont2{
+        background: rgba(255, 255, 255,0.3);
+        border-radius: 20px;
+        padding: 10px;
+    }
+    /* 약관 동의 */
+    .cont1>ul>li:first-child{ height: 55px;}
+    .cont1>ul>li:first-child>span{line-height: 1; font-size: 1.1rem;}
+    .cont1>ul>li>p{ font-size: 1rem;}
+    .join_SuccessBtn,.join_nextBtn{top: 40px; width: 70%; background: #eee;}
+    .cont1>ul>li >div{ background: rgba(255, 255, 255,0.4);}
+    /* 다음 단계 버튼 & 회원 가입 완료 */
+    .join_SuccessBtn,.join_nextBtn{
+        top: 30px;
+        width: 60%; height: 40px;
+        background: #eee;
+        border-radius: 18px;line-height: 40px;
+    }
+    /*-------------------회원 정보입력 박스-------------------*/
+    .cont2 form{width: 100%; padding: 5px;}
+    .cont2 form p{ margin-bottom: 20px;}
+    .cont2 form p span.title{ display: none;}
+    .cont2 form p input[type="text"],.cont2 form p input[type="password"]{ width: 55%; }
+    .cont2 form p input[type="button"]{ width: 40%;}
+    .cont2 form p span.choice{ display: none;}
+    .cont2 form p select{ background: #eee;}
+
+    .cont2 form p:nth-child(5) input[type="text"]{width: 23%;}
+    .cont2 form p:nth-child(5) input[type="button"]{ width: 23%;}
+    .cont2 form p:nth-child(6) input[type="text"]{ width: 66%; }
+    .cont2 form p:nth-child(6) input[type="button"]{ width: 30%;}
+    .cont2 form p:nth-child(7) input[type="text"]{ width: 45%;}
+    .cont2 form p:nth-child(7) select{ margin-left: 3%; width: 40%;}
+    input::placeholder { color: black;}
+
+}
