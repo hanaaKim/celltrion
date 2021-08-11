@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
 /*============reset============*/
 *{    margin:0; padding: 0;
     box-sizing: border-box; }
 li{    list-style: none;    }
 a{	text-decoration: none; color: #000;	}
-html, body{ height: 100%; font-size: 13px; }
+html, body{ 
+    height: 100%; font-size: 13px; 
+    font-family: 'Noto Sans KR', sans-serif;
+}
 
 /*float 속성 해제 클래스*/
 .clear:after{content: ''; display: block; clear: both;} 

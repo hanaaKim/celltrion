@@ -1,9 +1,13 @@
 @import "reset.css"; 
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR:wght@500;700&display=swap'); /*영어 - 엄청 굵은 폰트*/
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Londrina+Outline&family=Noto+Sans+KR:wght@500;700&display=swap'); /*테두리 폰트*/
-@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
 /* 기본 font-size : 13px */
 /* up버튼 - reset.css에 포함 */
+
+/*숫자카운트, 영어 - 엄청 굵은 폰트*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR:wght@500;700&display=swap'); 
+/*at4-숫자, 테두리 폰트*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Londrina+Outline&family=Noto+Sans+KR:wght@500;700&display=swap'); 
+/*at2-maintext*/
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap'); 
 
 /* article */
 section article{
@@ -28,6 +32,7 @@ section article{
     width: 800px;
     font-size: 4.5rem; color:white; line-height: 1.2;
     opacity: 1;
+    font-weight: 500;
 }
 .at1 .slideList .slideImg .slide_Subtxt{
     position: relative; top:40%; left: 80px;
@@ -255,13 +260,13 @@ section article{
 /* 컨텐츠 박스 */
 .at4 .at4_Box{
     position: absolute; bottom:60px; left:10%;
-    width: 80%; height: 500px;
+    width: 80%; height: 80%;
     /* outline: 1px solid red; */
 }
 
 .at4_covidBtn{
-    position: absolute;
-    top:-10%; left: 0; width: 23%;
+    position: relative;
+    top:0; left: 0; width: 23%;
     display: block;  height:6vh; 
     text-indent: 20px; line-height: 6vh;
     background: #f38e36; font-size: 1.3rem;
@@ -430,7 +435,7 @@ section article{
         left: 0 !important;
         width: 80% !important;
         margin-left: 10%;
-        font-size: 2.4rem; font-weight: bold;
+        font-size: 2.4rem;
         /* outline: 1px solid red; */
     }
     .at1 .slideList .slideImg .slide_Subtxt{
@@ -472,7 +477,7 @@ section article{
         height:60px ; line-height:60px; 
         font-size: 2rem;
     }
-    .at3>ul>li>p:nth-child(3)>span{font-size:3rem; font-family: 'Anton', sans-serif;  }
+    .at3>ul>li>p:nth-child(3)>span{font-size:3rem;}
     .at3>ul>li>p:nth-child(4){display: none;}
     
     /* 컨텐츠 박스 */

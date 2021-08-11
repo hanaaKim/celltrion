@@ -42,7 +42,7 @@ section article{
 }
 .at1 .at1_cont2 ul li:last-child{ flex:  0 0 66%;}
 .at1 .at1_cont2 ul li .at1_title{ font-size: 1.2rem; padding-right: 10px;}
-.at1 .at1_cont2 ul li .at1_txt{font-size: 1rem; color:#ddd}
+.at1 .at1_cont2 ul li .at1_txt{font-size: 1.1rem; color:#ddd}
 
 /*---------------------article2---------------------*/
 .at2{
