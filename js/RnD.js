@@ -52,20 +52,31 @@ $(function(){
 		var scroll = Math.round($(window).scrollTop());
         // console.log("scroll : "+scroll);
 
-        menu.removeClass("active");
-		if(scroll>=ht*0 && scroll<ht*1){ //0<scroll<677
-            menu.eq(0).addClass("active")
-		}else if(scroll>=ht*1 && scroll<ht*2){
-            menu.eq(1).addClass("active")
-		}else if(scroll>=ht*2 && scroll<ht*3){
-            menu.eq(2).addClass("active");
-		}else if(scroll>=ht*3 && scroll<ht*4){
-			menu.eq(3).addClass("active");
-		}else if(scroll>=ht*4 && scroll<ht*5){
-			menu.eq(4).addClass("active");
-		}else if(scroll>=ht*5 && scroll<ht*6){
-			menu.eq(5).addClass("active");
-		}
+        // menu.removeClass("active");
+		// if(scroll>=ht*0 && scroll<ht*1){ //0<scroll<677
+        //     menu.eq(0).addClass("active")
+		// }else if(scroll>=ht*1 && scroll<ht*2){
+        //     menu.eq(1).addClass("active")
+		// }else if(scroll>=ht*2 && scroll<ht*3){
+        //     menu.eq(2).addClass("active");
+		// }else if(scroll>=ht*3 && scroll<ht*4){
+		// 	menu.eq(3).addClass("active");
+		// }else if(scroll>=ht*4 && scroll<ht*5){
+		// 	menu.eq(4).addClass("active");
+		// }else if(scroll>=ht*5 && scroll<ht*6){
+		// 	menu.eq(5).addClass("active");
+		// }
+
+        for(var i=0; i< 6;i++){
+            if(scroll>ht*i && scroll<ht*(i+1)){
+                menu.removeClass();
+                menu.eq(i).addClass("active");   
+                var target = $("section").eq(i).children("article"); 
+                text_Ani(target);
+            }
+            
+        }
+
 	});
 
 

@@ -14,7 +14,6 @@ $(function(){
         delta = e.originalEvent.wheelDelta/120; //기본으로 한번 마우스 휠 움직임의 값이 120정도
         var height =$( window ).outerHeight();
         
-        // var moveTop = null;
         if(delta>0){ //마우스 휠 올림
             try{
                 var prev = $(this).prev().offset().top;
@@ -72,41 +71,7 @@ $(function(){
         }
     });
 
-    //마우스 휠 이벤트
-    at3_box.on("mousewheel",".box",function(e){
-        e.preventDefault();
-        var delta=0;
-        delta = e.originalEvent.wheelDelta/120;
-        if(delta<0){//마우스 스크롤 내렸을때
-            $(".box:nth-child(1)").css("z-index","400");
-            $(".box:nth-child(1)").stop().animate({left:0, top:0, opacity:"1"},500);
-
-            $(".box:nth-child(2)").css("z-index",300);
-            $(".box:nth-child(2)").stop().animate({left:30, top:30},500);
-
-            $(".box:nth-child(3)").css("z-index",100);
-            $(".box:nth-child(3)").stop().animate({left:0, top:50,opacity:"0"},500,
-
-            function(){
-                at3_box.prepend("<div class='box'>"+at3_box.find("div:last").html()+"</div>");
-                at3_box.find("div:last").remove();
-            });
-
-        }else{
-            $(".box:nth-child(2)").css("z-index",300);
-            $(".box:nth-child(2)").stop().animate({left:-30, top:-30, opacity:"0"},500);
-
-            $(".box:nth-child(3)").css("z-index",400);
-            $(".box:nth-child(3)").stop().animate({left:0, top:0},500);
-            
-            $(".box:nth-child(4)").css("z-index","300");
-            $(".box:nth-child(4)").stop().animate({left:30, top:30, opacity:"1"},500,
-            function(){
-                at3_box.append("<div class='box'>"+at3_box.find("div:first").html()+"</div>");
-                at3_box.find("div:last").remove();
-            }); 
-        }
-    })
+    
     /*소셜미디어 이미지 넣기------------------------------article4*/
     for(i=0; i<2; i++){
         $(".at4>ul>li").eq(i).css("background","url(img/covid/social"+i+".jpg)no-repeat center center")
@@ -127,6 +92,7 @@ $(function(){
             $(this).animate({"top":"-20px"},400,function(){
                 $(this).animate({"top":"-10px"},400,loop);
             });
+            // setInterval(loop,100);
         },
         mouseleave:function(){
             $(this).stop().animate({top:0},400);
@@ -142,8 +108,8 @@ $(function(){
     var slideBox = $(".at5_box").find("ul");
     var slideList = slideBox.children().outerWidth();
     var left = -slideBox.offset().left;
-    console.log(slideList) 
-    console.log(left)
+    // console.log(slideList) 
+    // console.log(left)
 
     $(".rightBtn").click(function(){
         slideBox.stop().animate({"left":-slideList+left+"px"},800,function(){

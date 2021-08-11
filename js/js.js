@@ -194,8 +194,8 @@ $(function(){
     $(".slideImg:eq(2) .slide_Subtxt").css("color","black");
     $(".slideImg:eq(3) .slide_Title").css("color","black").css({"top":"30%","left":"57%"});
     $(".slideImg:eq(3) .slide_Subtxt").css("color","black").css({"top":"35%","left":"57%"});
-    $(".slideImg:eq(4) .slide_Title").css({"top":"35%","left":"57%"}).css("width","540px");
-    $(".slideImg:eq(4) .slide_Subtxt").css({"top":"40%","left":"57%"});
+    $(".slideImg:eq(4) .slide_Title").css({"top":"35%","left":"50%"}).css("width","600px");
+    $(".slideImg:eq(4) .slide_Subtxt").css({"top":"40%","left":"50%"});
 
     //at1 슬라이드 동작시, 맨 처음 텍스트 애니메이션
     $(".slideImg1").find(".slide_Title").animate({"top":"+=20px","opacity":"1"},800,function(){
