@@ -115,7 +115,16 @@ section:nth-child(6) article .p_box {line-height: 50px; padding: 5px 0;}
 /* 모바일 */
 @media screen and (max-width:767px){  
     .article_Menu{left: 90%;}
-
+	
+    /*test-추가*/
+    section{ background-size: cover; }
+    section:nth-child(1){background-image: url(../img/RnD/img0.jpg); background-position: top right;}
+    section:nth-child(2){background-image: url(../img/RnD/img1.jpg); background-position: center center;}
+    section:nth-child(3){background-image: url(../img/RnD/img2.jpg); background-position: center center;}
+    section:nth-child(4){background-image: url(../img/RnD/img3.jpg); background-position: center center;}
+    section:nth-child(5){background-image: url(../img/RnD/img4.jpg); background-position: top left;}
+    section:nth-child(6){background-image: url(../img/RnD/img5.jpg); background-position: center center;}
+	
     /* article */
     article{ width: 80%; }
     section:nth-child(1) article{top:50%; left:5%; }
