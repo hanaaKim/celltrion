@@ -5,11 +5,13 @@
     <title>covid-19</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/covid.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
     
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/default.js"></script>
+    <script src="js/swiper.min.js"></script>
     <script src="js/covid.js"></script>
     
 </head>
@@ -83,17 +85,25 @@
         
         <article class="at at5">
             <p>제품 이미지</p>
-            <div class="at5_box">
-                <ul class="clear">
-                    <li><img src="img/covid/img0.jpg" alt="렉키로나 제품이미지1"></li>
-                    <li><img src="img/covid/img1.jpg" alt="렉키로나 제품이미지2"></li> 
-                    <li><img src="img/covid/img2.jpg" alt="렉키로나 제품이미지3"></li> 
-                    <li><img src="img/covid/img3.jpg" alt="렉키로나 제품이미지4"></li> 
-                    <li><img src="img/covid/img4.jpg" alt="렉키로나 제품이미지5"></li>
-                </ul>
-                <div class="leftBtn"><i class="fas fa-chevron-left"></i></div>
-                <div class="rightBtn"><i class="fas fa-chevron-right"></i></div>
+
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image:url(img/covid/img0.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(img/covid/img1.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(img/covid/img2.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(img/covid/img3.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(img/covid/img4.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(img/covid/img7.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(img/covid/img8.png)"></div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div>
+                <div class="swiper-button-prev"><i class="fas fa-chevron-left"></i></div>
             </div>
+            
         </article>
         <!--footer 따로 분리 후 html연결-->
         <div class="footer"></div>
