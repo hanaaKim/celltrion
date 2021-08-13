@@ -62,7 +62,7 @@ $(function(){
             });
 
             //텍스트 다시 초기화
-            if(pageNum!=4){
+            if(pageNum!=4){ //푸터 제외하기
                 text_reset($(this));
             }
             

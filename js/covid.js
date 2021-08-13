@@ -89,10 +89,9 @@ $(function(){
             .html("<h2>"+innerBox_Txt1A[index]+"</h2><br><br>"+innerBox_Txt2A[index]+"<br><br>"+innerBox_Txt3A[index]);
         },
         mouseenter:function loop(){
-            $(this).animate({"top":"-20px"},400,function(){
-                $(this).animate({"top":"-10px"},400,loop);
+            $(this).stop().animate({"top":"-20px"},400,function(){
+                $(this).stop().animate({"top":"-10px"},400,loop);
             });
-            // setInterval(loop,100);
         },
         mouseleave:function(){
             $(this).stop().animate({top:0},400);
@@ -105,53 +104,31 @@ $(function(){
     });
 
     /*제품이미지 슬라이드---------------------------------article5*/
-    var slideBox = $(".at5_box").find("ul");
-    var slideList = slideBox.children().outerWidth();
-    var left = -slideBox.offset().left;
-    // console.log(slideList) 
-    // console.log(left)
-
-    $(".rightBtn").click(function(){
-        slideBox.stop().animate({"left":-slideList+left+"px"},800,function(){
-           //끝에 추가를 시키는 메소드
-           slideBox.append("<li>"+slideBox.find("li:first").html()+"</li>");
-           slideBox.find("li:first").remove();
-           slideBox.css("left",left);
-        })
-
+    var swiper = new Swiper('.swiper-container', {
+        initialSlide: 3,
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        loop:true,
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows : true,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
     });
-
-    $(".leftBtn").click(function(){
-        //앞에 추가를 시키는 메소드
-        slideBox.stop().animate({"left":slideList+left+"px"},800,function(){
-            slideBox.prepend("<li>"+slideBox.find("li:last").html()+"</li>");
-            slideBox.find("li:last").remove();
-            slideBox.css("left",left);
-        });
-    });
-
-    //슬라이드 이미지 호버시 확대
-    var img = slideBox.find("li");
-    img.hover(function(){
-        // no=img.index(this);
-        // if(no==2){
-        //     $(this).css("transform","scale(1.15) translateY(-10%)");
-        // }else{
-        //     $(this).css("transform","scale(1.15)");
-        // }
-        $(this).css("transform","scale(1.15)");
-        
-    },function(){
-        // if(no==2){
-        //     $(this).css("transform","scale(1) translateY(-10%)");
-        // }else{
-        //     $(this).css("transform","scale(1) ");
-        // }
-        $(this).css("transform","scale(1) ");
-        
-    })
-
 });
+
+
 function at1Ani(){
     $(".at1>p").stop().animate({"top":"+=5%","opacity":"1"},1200);
 }

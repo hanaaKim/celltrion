@@ -26,11 +26,12 @@ $(function(){
         }else{ //음수 : 마우스 휠 내림
             try{
                 var next = $(this).next().offset().top;
+                var pageNum = Math.round(next/ht);
                 if(next==0){ return false; }
+                console.log(pageNum)
             }catch(e){
                 return false;
             }
-
             var target = $(this).next().children("article"); //다음 섹션의 자식 article
             $("html, body").stop().animate({scrollTop:next},1000,
                 function(){
@@ -39,36 +40,25 @@ $(function(){
                 }
             );
 
-            //delay(1000)을 줘서, 스크롤 휠이 지나간 후에 초기상태로 되돌려놓기 위함
-            $(this).children("article").find(".p_box>p").delay(1000).animate({top:"100%"},0); //다음 섹션의 자식 article
-            $(this).children("article").find(".span_box>span").delay(1000).animate({top:"70px"},0); //다음 섹션의 자식 article
+            //텍스트 다시 초기화
+            if(pageNum!=6){ //푸터 제외하기
+                //delay(1000)을 줘서, 스크롤 휠이 지나간 후에 초기상태로 되돌려놓기 위함
+                $(this).children("article").find(".p_box>p").delay(1000).animate({top:"100%"},0); //다음 섹션의 자식 article
+                $(this).children("article").find(".span_box>span").delay(1000).animate({top:"70px"},0); //다음 섹션의 자식 article
+            }
+            
         }        
     });
 
+    var menu = $(".article_Menu li");
 
     //스크롤시 현재 영역에 해당하는 메뉴 활성화
-    var menu = $(".article_Menu li");
 	$(window).scroll(function(){
 		var scroll = Math.round($(window).scrollTop());
-        // console.log("scroll : "+scroll);
-
-        // menu.removeClass("active");
-		// if(scroll>=ht*0 && scroll<ht*1){ //0<scroll<677
-        //     menu.eq(0).addClass("active")
-		// }else if(scroll>=ht*1 && scroll<ht*2){
-        //     menu.eq(1).addClass("active")
-		// }else if(scroll>=ht*2 && scroll<ht*3){
-        //     menu.eq(2).addClass("active");
-		// }else if(scroll>=ht*3 && scroll<ht*4){
-		// 	menu.eq(3).addClass("active");
-		// }else if(scroll>=ht*4 && scroll<ht*5){
-		// 	menu.eq(4).addClass("active");
-		// }else if(scroll>=ht*5 && scroll<ht*6){
-		// 	menu.eq(5).addClass("active");
-		// }
+        // var target ; 
 
         for(var i=0; i< 6;i++){
-            if(scroll>ht*i && scroll<ht*(i+1)){
+            if(scroll>=ht*i && scroll<ht*(i+1)){
                 menu.removeClass();
                 menu.eq(i).addClass("active");   
                 var target = $("section").eq(i).children("article"); 
@@ -77,6 +67,44 @@ $(function(){
             
         }
 
+        // menu.removeClass("active");
+		// if(scroll>=ht*0 && scroll<ht*1){ //0<scroll<677
+        //     menu.eq(0).addClass("active")
+        //     target = $("section").eq(0).children("article"); 
+
+        //     text_Ani(target);
+
+		// }else if(scroll>=ht*1 && scroll<ht*2){
+        //     menu.eq(1).addClass("active")
+        //     target = $("section").eq(1).children("article"); 
+
+        //     text_Ani(target);
+
+		// }else if(scroll>=ht*2 && scroll<ht*3){
+        //     menu.eq(2).addClass("active");
+        //     target = $("section").eq(2).children("article"); 
+
+        //     text_Ani(target);
+
+		// }else if(scroll>=ht*3 && scroll<ht*4){
+		// 	menu.eq(3).addClass("active");
+        //     target = $("section").eq(3).children("article"); 
+
+        //     text_Ani(target);
+
+		// }else if(scroll>=ht*4 && scroll<ht*5){
+		// 	menu.eq(4).addClass("active");
+        //     target = $("section").eq(4).children("article"); 
+
+        //     text_Ani(target);
+
+		// }else if(scroll>=ht*5 && scroll<ht*6){
+		// 	menu.eq(5).addClass("active");
+        //     target = $("section").eq(5).children("article"); 
+
+        //     text_Ani(target);
+
+		// }
 	});
 
 
@@ -102,6 +130,6 @@ function text_Ani(t){
     var tg1 = target.find("div>.txt1"); //첫번째 텍스트
     var tg2 = target.find("div>.txt2"); //두번째 텍스트
 
-    tg1.stop().animate({top:0},800);
-    tg2.delay(700).stop().animate({top:0},800);
+    tg1.stop().animate({top:0},600);
+    tg2.delay(600).stop().animate({top:0},600);
 }
