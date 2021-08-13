@@ -15,10 +15,10 @@ section article{
 .at1>p{
     position: relative; top:40%; left: 7%;
     width: 30%;
-    color:#ddd; font-size: 1rem;
+    color:#ddd; font-size: 1.2rem;
     line-height: 2; opacity: 0;
 }
-.at1>p>span{ font-size: 1.3rem; font-weight: bold;}
+.at1>p>span{ font-size: 1.5rem; font-weight: bold;}
 
 /*---------------------article2---------------------*/
 .at2{
@@ -185,50 +185,26 @@ section article{
     background:-webkit-linear-gradient(bottom, #112f2f 0%, #425982 30%, #6379a0 55%, #425982 100%);
 }
 
-.at5_box{
-    position: relative;
-    top:30%; left:50%;
-    transform: translateX(-50%);
-    width:90%; 
-    height: 230px;
-    overflow: hidden;
-    border: 5px solid rgba(65, 85, 159, 0.3);
-    box-shadow: 0px 15px 41px 4px rgb(0 0 0 / 20%)
-
+/* swiper */
+.swiper-container {
+    top:25%;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px; height: 300px;
 }
 
-.at5_box ul{
-    position: absolute;
-    top:0; left:-5%;
-    width:110%; height: 100%;
+/* 화살표 */
+.swiper-button-next,.swiper-button-prev{ background: none;}
+.swiper-button-next i,.swiper-button-prev i{
+    display: block;
+    font-size: 4rem; color:white;
+}
 
-}
-.at5_box ul li{
-    float:left;
-    width: 20%; height: 100%;
-    padding: 50px 50px 50px 0;
-    /* outline: 1px solid white; */
-    transition: all 1s;
-    
-}
-.at5_box ul li:nth-child(1),.at5_box ul li:nth-child(2),
-.at5_box ul li:nth-child(4),.at5_box ul li:nth-child(5){ filter: opacity(35%);}
-.at5_box ul li:nth-child(3){  transform:translateY(-10%)}
-.at5_box ul li img{ width: -webkit-fill-available; transition: all 0.5s;}
-.at5 .at5_box .leftBtn{
-    position: absolute; top:50%; left:1%;
-    width: 50px; height:50px;
-    z-index: 1;
-}
-.at5 .at5_box .rightBtn{
-    position: absolute; top:50%; right:1%;
-    width: 50px; height:50px;
-    z-index: 1;
-}
-.at5 .at5_box .leftBtn i,.at5 .at5_box .rightBtn i{ 
-    display: block; text-align: center; 
-    line-height: 50px; font-size: 40px; color:#ddd;
-}
 /*----------미디어쿼리---------- */
 /* 테블릿 */
 @media screen and (min-width: 768px) and (max-width:1023px){   

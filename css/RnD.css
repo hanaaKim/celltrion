@@ -63,10 +63,12 @@ article>.p_box>p{
     top:100%;
     width: 100%; height: 100%;
     font-size: 3.2rem;
+    
 }    
 
 /* 작은 글씨 */
-article>.span_box{ height: auto; overflow: hidden; }
+article>.span_box{ height: auto; overflow: hidden;
+}
 
 article>.span_box>span{
     position: relative; 
@@ -76,9 +78,11 @@ article>.span_box>span{
 }
 
 section:nth-child(1) article .p_box p{font-size: 4rem;}
-section:nth-child(1) article .span_box span{font-size: 1.2rem; top:0; font-weight: normal;}
+section:nth-child(1) article .span_box span{font-size: 1.4rem; top:0; font-weight: normal;}
 section:nth-child(5) article .p_box p span{font-size: 2rem;}
 section:nth-child(6) article .p_box {line-height: 50px; padding: 5px 0;}
+section:nth-child(6) article .p_box p{font-size: 3rem;}
+
 
 /* 첫번째 섹션의 텍스트애니메이션 */
 .at1 div:first-child .txt1{
@@ -110,21 +114,21 @@ section:nth-child(6) article .p_box {line-height: 50px; padding: 5px 0;}
     /* 작은 글씨 */
     article>.span_box>span{ font-size: 1.8rem;}
     section:nth-child(1) article .p_box p{font-size: 3.5rem;}
+    section:nth-child(6) article .p_box p{font-size: 2.6rem;}
+
 }
 
 /* 모바일 */
 @media screen and (max-width:767px){  
     .article_Menu{left: 90%;}
-	
-    /*test-추가*/
-    section{ background-size: cover; }
-    section:nth-child(1){background-image: url(../img/RnD/img0.jpg); background-position: top right;}
-    section:nth-child(2){background-image: url(../img/RnD/img1.jpg); background-position: center center;}
-    section:nth-child(3){background-image: url(../img/RnD/img2.jpg); background-position: center center;}
-    section:nth-child(4){background-image: url(../img/RnD/img3.jpg); background-position: center center;}
-    section:nth-child(5){background-image: url(../img/RnD/img4.jpg); background-position: top left;}
-    section:nth-child(6){background-image: url(../img/RnD/img5.jpg); background-position: center center;}
-	
+    /* section */
+    section:nth-child(1){background: url(../img/RnD/img0.jpg) center/cover no-repeat;}
+    section:nth-child(2){background: url(../img/RnD/img1.jpg) center/cover no-repeat;}
+    section:nth-child(3){background: url(../img/RnD/img2.jpg) center/cover no-repeat;}
+    section:nth-child(4){background: url(../img/RnD/img3.jpg) top right/cover no-repeat;}
+    section:nth-child(5){background: url(../img/RnD/img4.jpg) top left/cover no-repeat;}
+    section:nth-child(6){background: url(../img/RnD/img5.jpg) center/cover no-repeat;}
+
     /* article */
     article{ width: 80%; }
     section:nth-child(1) article{top:50%; left:5%; }
@@ -134,19 +138,18 @@ section:nth-child(6) article .p_box {line-height: 50px; padding: 5px 0;}
     
     /* 큰 글씨 */
     article>.p_box{ line-height: 1.5;}
-    article>.p_box>p{ font-size: 2.2rem;}    
+    article>.p_box>p{ font-size: 2rem;}    
     
     /* 작은 글씨 */
-    article>.span_box>span{  font-size: 1.3rem; }
+    article>.span_box>span{  font-size: 1.5rem; }
     
     section:nth-child(1) article .p_box p{font-size: 3rem; line-height:100px;}
-    section:nth-child(1) article .span_box span{font-size: 1.2rem; top:0; font-weight: normal; }
+    section:nth-child(1) article .span_box span{display: none;}
 
-    section:nth-child(3) article .span_box span{font-size: 1.2rem; }
     section:nth-child(3) article .p_box p,
     section:nth-child(4) article .p_box p{ line-height:100px;}
 
-    section:nth-child(5) article .p_box p span{font-size: 2rem;}
-    section:nth-child(6) article .p_box {line-height: 50px; padding: 5px 0;}
-    section:nth-child(6) article .p_box p{font-size: 1.9rem; }
+    section:nth-child(5) article .p_box p span{font-size: 1.5rem;}
+    section:nth-child(6) article .p_box {line-height: 40px; }
+    section:nth-child(6) article .p_box p{font-size: 1.8rem; }
 }
