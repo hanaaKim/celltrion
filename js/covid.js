@@ -103,6 +103,7 @@ $(function(){
         $(".at4").find(".bg").css("display","none");
     });
 
+    
     /*제품이미지 슬라이드---------------------------------article5*/
     var swiper = new Swiper('.swiper-container', {
         initialSlide: 3,
@@ -126,6 +127,17 @@ $(function(){
             prevEl: '.swiper-button-prev',
         },
     });
+
+
+    //모바일시, 스크롤
+	$(window).scroll(function(){
+        var scroll = Math.round($(window).scrollTop());
+        var ht = $(window).height(); 
+
+        if(scroll>=ht*1 && scroll<ht*2){  at2Ani();}
+        if(scroll>=ht*2 && scroll<ht*3){  at3Ani();}
+    });
+
 });
 
 
@@ -138,7 +150,6 @@ function at2Ani(){
     $(".at2_bar>li:eq(1)>div").stop().animate({"width":"40%","opacity":"1"},1200);
     $(".at2_bar>li:eq(2)>div").stop().animate({"width":"40%","opacity":"1"},1200);
     $(".at2_bar>li:eq(3)>div").stop().animate({"width":"60%","opacity":"1"},1200);
-
 }
 
 function at3Ani(){

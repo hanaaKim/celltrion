@@ -22,12 +22,9 @@ $(function(){
     var delta = 0;
     delta = e.originalEvent.wheelDelta/120; //기본으로 한번 마우스 휠 움직임의 값이 120정도
 
-    // var moveTop = null;
     if(delta>0){ //마우스 휠 올림
       try{
           var prev = $(this).prev().offset().top;
-          // $(this).find(".picBox").stop().animate({left:"-100%"},500);
-          // $(this).find(".txtBox").stop().animate({opacity:"0"},500);          
       }catch(e){
         return false;
       }
@@ -37,8 +34,6 @@ $(function(){
         
       try{
         var next = $(this).next().offset().top;
-        // $(this).next().find(".picBox").stop().animate({left:"10%"},800);
-        // $(this).next().find(".txtBox").stop().animate({top:"3%",opacity:"1"},1000);
       }catch(e){
         return false;
       }
@@ -73,32 +68,34 @@ $(function(){
     $(".history_txt").eq(i).html(history_txtA[i]);
   }
 
+  //모바일시, 스크롤
+	$(window).scroll(function(){
+    var scroll = Math.round($(window).scrollTop());
+    var ht = $(window).height(); 
+        
+    if(scroll>=ht*1 && scroll<ht*2){ //at2
+      var target = $("article").eq(1).find(".txtBox"); 
+      history_Ani(target);
+    }
+    if(scroll>=ht*2 && scroll<ht*3){ //at3
+      var target = $("article").eq(2).find(".txtBox"); 
+      history_Ani(target);
+    }
+    if(scroll>=ht*3 && scroll<ht*4){ //at4
+      var target = $("article").eq(3).find(".txtBox"); 
+      history_Ani(target);
+    }
+    if(scroll>=ht*4 && scroll<ht*5){ //at5
+      var target = $("article").eq(4).find(".txtBox"); 
+      history_Ani(target);
+    }
+
+	});
+
 });
 
-// article2 별 및 텍스트 애니메이션
-function init(){
 
-    //별
-    var style = ["style1", "style2", "style3", "style4"];
-    var tam = ["tam1", "tam1", "tam1", "tam2", "tam3"];
-    var opacity = ["opacity1", "opacity1", "opacity1", "opacity2", "opacity2", "opacity3"];
-  
-    function getRandomArbitrary(min, max) {
-      return Math.floor(Math.random() * (max - min)) + min;
-    }
-  
-    var estrela = "";
-    var qtdeEstrelas = 250;
-    var noite = document.querySelector(".constelacao");
-    var widthWindow = window.innerWidth;
-    var heightWindow = window.innerHeight;
-  
-    for (var i = 0; i < qtdeEstrelas; i++) {
-      estrela += "<span class='estrela " + style[getRandomArbitrary(0, 4)] + " " + opacity[getRandomArbitrary(0, 6)] + " "
-      + tam[getRandomArbitrary(0, 5)] + "' style='animation-delay: ." +getRandomArbitrary(0, 9)+ "s; left: "
-      + getRandomArbitrary(0, widthWindow) + "px; top: " + getRandomArbitrary(0, heightWindow) + "px;'></span>";
-    }
-  
-    noite.innerHTML = estrela;    
-  
+function history_Ani(t){
+  var target= t;
+  target.stop().animate({top:"3%",opacity:"1"},900);
 }

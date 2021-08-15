@@ -1,46 +1,78 @@
 $(function(){
+    var menu = $(".article_Menu li");
+
     // 마우스 휠
     var ht = $(window).height(); //한 섹션의 높이값
+
     $("section").on("mousewheel",function(e){
         var delta = 0;
         delta = e.originalEvent.wheelDelta/120;
         if(delta>0){ //양수 : 마우스 휠 올림
             try{
                 var prev = $(this).prev().offset().top;
+                var pageNum = Math.round(prev/ht);
+                if(pageNum>=0){
+                    menu.removeClass().eq(pageNum).addClass("active");   
+                }
             }catch(e){
                 return false;
             }
+
             $("html, body").stop().animate({scrollTop:prev},1000);
         }else{ //음수 : 마우스 휠 내림
             try{
                 var next = $(this).next().offset().top;
                 if(next==0){ return false; }
+
+                var pageNum = Math.round(next/ht);
+                if(pageNum!=6){
+                    menu.removeClass().eq(pageNum).addClass("active");   
+                }
+                
             }catch(e){
                 return false;
             }
+
             $("html, body").stop().animate({scrollTop:next},1000);
         }        
     });
 
-    var menu = $(".article_Menu li");
 
     //스크롤시 현재 영역에 해당하는 메뉴 활성화
 	$(window).scroll(function(){
 		var scroll = Math.round($(window).scrollTop());
-        if(scroll==ht*1){
-            menu.removeClass();
-            menu.eq(1).addClass("active");   
+        
+        if(scroll>=ht*0 && scroll<ht*1){ //at1
+            menu.removeClass().eq(0).addClass("active");   
+            var target = $("section").eq(0).children("article"); 
+            text_Ani(target);
+        }
+        if(scroll>=ht*1 && scroll<ht*2){ //at2
+            menu.removeClass().eq(1).addClass("active");   
             var target = $("section").eq(1).children("article"); 
             text_Ani(target);
         }
-        if(scroll==ht*2){
-            menu.removeClass();
-            menu.eq(2).addClass("active");   
+        if(scroll>=ht*2 && scroll<ht*3){ //at3
+            menu.removeClass().eq(2).addClass("active");  
             var target = $("section").eq(2).children("article"); 
             text_Ani(target);
         }
-        var top = $("section").eq(2).offset().top;
-        text_reset(top);
+        if(scroll>=ht*3 && scroll<ht*4){ //at4
+            menu.removeClass().eq(3).addClass("active");   
+            var target = $("section").eq(3).children("article"); 
+            text_Ani(target);
+        }
+        if(scroll>=ht*4 && scroll<ht*5){ //at5
+            menu.removeClass().eq(4).addClass("active");   
+            var target = $("section").eq(4).children("article"); 
+            text_Ani(target);
+        }
+        if(scroll>=ht*5 && scroll<ht*6){ //at6
+            menu.removeClass().eq(5).addClass("active");   
+            var target = $("section").eq(5).children("article"); 
+            text_Ani(target);
+        }
+
 	});
 
 
@@ -68,23 +100,24 @@ function text_Ani(t){
 
     tg1.stop().animate({top:0},600);
     tg2.stop().animate({top:0},600);
+
+    var top = target.parents().offset().top;
+    text_reset(top);
 }
 
 function text_reset(t){
-    // console.log("reset 실행")
     var top = t;
     var ht = $(window).height(); //한 섹션의 높이값
 
     var pageNum = Math.round(top/ht);
     var r_pageNum = pageNum-1;
-
-    console.log(pageNum);
-    console.log("이전 : "+r_pageNum);
+    var n_pageNum = pageNum+1;
     
     //텍스트 다시 초기화
-    if(pageNum!=6 && r_pageNum!=-1){ //푸터 제외하기
-        //delay(1000)을 줘서, 스크롤 휠이 지나간 후에 초기상태로 되돌려놓기 위함
-        $("section").eq(r_pageNum).children("article").find(".p_box>p").css("top","100%"); //다음 섹션의 자식 article
-        $("section").eq(r_pageNum).children("article").find(".span_box>span").css("top","70px"); //다음 섹션의 자식 article
+    if(pageNum!=6){ //푸터 제외하기
+        $("section").eq(r_pageNum).children("article").find(".p_box>p").css("top","100%");
+        $("section").eq(r_pageNum).children("article").find(".span_box>span").css("top","80px");
+        $("section").eq(n_pageNum).children("article").find(".p_box>p").css("top","100%");
+        $("section").eq(n_pageNum).children("article").find(".span_box>span").css("top","80px");
     }
 }

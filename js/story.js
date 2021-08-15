@@ -11,64 +11,52 @@ $(function(){
         if(delta>0){ //마우스 휠 올림
             try{
                 var prev = $(this).prev().offset().top;
-                var pageNum = Math.round(prev/ht);
             }catch(e){
                 return false;
             }
             
-            var target = $(this).prev().children(".con_txt"); //다음 article의 자식 con_txt
-            $("html, body").stop().animate({scrollTop:prev},1000,function(){
-                //콜백함수로 함수호출
-                txt_Ani(target);
-
-                if(pageNum == 2){//at3
-                    at4_reset()
-                    at3_Ani();
-                }else if(pageNum == 1){//at2
-                    at3_reset()
-                    at2_Ani();
-                }else if(pageNum == 0){//at1
-                    at2_reset()
-                    at1_Ani();
-                }else{ return false;}
-            });
-
-            //텍스트 다시 초기화
-            text_reset($(this));
-            
+            $("html, body").stop().animate({scrollTop:prev},1000);
         }else{ //마우스 휠 내림
             try{
                 var next = $(this).next().offset().top;
-                var pageNum = Math.round(next/ht);
                 if(next==0){ return false; } //마지막 아티클 일때
             }catch(e){
                 return false;
             }
-            var target = $(this).next().children(".con_txt"); //다음 article의 자식 con_txt
-            $("html, body").stop().animate({scrollTop:next},1000,function(){
-                //콜백함수로 함수호출
-                txt_Ani(target);
-                console.log(pageNum);
-                if(pageNum == 1){//at2
-                    at1_reset();
-                    at2_Ani();
-                }else if(pageNum == 2){//at3
-                    at2_reset();
-                    at3_Ani();
-                }else if(pageNum == 3){//at4
-                    at3_reset()
-                    at4_Ani();
-                }else{return false; }
-            });
-
-            //텍스트 다시 초기화
-            if(pageNum!=4){ //푸터 제외하기
-                text_reset($(this));
-            }
-            
+           
+            $("html, body").stop().animate({scrollTop:next},1000);
         }
     })
 
+
+    //모바일시, 스크롤
+	$(window).scroll(function(){
+        var scroll = Math.round($(window).scrollTop());
+        var ht = $(window).height(); 
+        
+        if(scroll>=ht*0 && scroll<ht*1){ //at1
+            var target = $("article").eq(0).find(".con_txt"); //다음 article의 자식 con_txt
+            txt_Ani(target);
+            at1_Ani();
+        }
+        if(scroll>=ht*1 && scroll<ht*2){ //at2
+            var target = $("article").eq(1).find(".con_txt"); //다음 article의 자식 con_txt
+            txt_Ani(target);
+            at2_Ani();
+        }
+        if(scroll>=ht*2 && scroll<ht*3){ //at3
+            var target = $("article").eq(2).find(".con_txt"); //다음 article의 자식 con_txt
+            txt_Ani(target);
+            at3_Ani();
+        }
+        if(scroll>=ht*3 && scroll<ht*4){ //at4
+            var target = $("article").eq(3).find(".con_txt"); //다음 article의 자식 con_txt
+            txt_Ani(target);
+            at4_Ani();
+        }
+        
+    
+    });
 
 });
 /*-------------------------------------- */
@@ -130,7 +118,7 @@ function at4_reset(){
 
 //텍스트 애니메이션 함수
 function txt_Ani(t){
-    var target = t;
+    var target = t; //con_txt
 
     var line01 = target.children(".line01");
     var line02 = target.children(".line02");
@@ -142,14 +130,33 @@ function txt_Ani(t){
     line02.stop().animate({"height":"100%"},1600);
     line03.stop().animate({"width":"100%"}, 1600);
     line04.stop().animate({"height":"100%"},1600);
+
+    var top = target.parents().offset().top;
+    text_reset(top);
 }   
 
 //텍스트 초기화 함수
 function text_reset(t){
-    var target = t;
-    target.children(".con_txt").delay(1000).animate({"opacity":0}, 0);
-    target.children(".con_txt").find(".line01").delay(1000).animate({"width":0}, 0);
-    target.children(".con_txt").find(".line02").delay(1000).animate({"height":0},0);
-    target.children(".con_txt").find(".line03").delay(1000).animate({"width":0}, 0);
-    target.children(".con_txt").find(".line04").delay(1000).animate({"height":0},0);
+    var top = t;
+    var ht = $(window).height(); //한 섹션의 높이값
+
+    var pageNum = Math.round(top/ht);
+    var r_pageNum = pageNum-1;
+    var n_pageNum = pageNum+1;
+
+    $("article").eq(r_pageNum).children(".con_txt").css("opacity",0);
+    $("article").eq(n_pageNum).children(".con_txt").css("opacity",0);
+
+    for(i=1; i<5; i++){
+        if(i==1 || i==3){
+            $("article").eq(r_pageNum).children(".con_txt").find(".line0"+i+"").css("width",0);
+            $("article").eq(n_pageNum).children(".con_txt").find(".line0"+i+"").css("width",0);
+
+        }
+        if(i==2 || i==4){
+            $("article").eq(r_pageNum).children(".con_txt").find(".line0"+i+"").css("height",0);
+            $("article").eq(n_pageNum).children(".con_txt").find(".line0"+i+"").css("height",0);
+        }
+    }
+    
 }
