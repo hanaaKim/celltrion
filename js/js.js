@@ -163,7 +163,7 @@ $(function(){
 
         if(scroll>=ht*0 && scroll<ht*1){ //at1
             clearTimeout(init); //별 애니메이션 중지
-		}else if(scroll==ht*1 && scroll<ht*2){ //at2
+		}else if(scroll>=ht*1 && scroll<=ht*1.05 ){ //at2
             //0.05초후에 init호출(별 애니메이션)
             setTimeout(init,50);
             // if(scroll == ht*1){ setTimeout(init,50); }
