@@ -10,10 +10,6 @@ $(function(){
         if(delta>0){ //양수 : 마우스 휠 올림
             try{
                 var prev = $(this).prev().offset().top;
-                var pageNum = Math.round(prev/ht);
-                if(pageNum>=0){
-                    menu.removeClass().eq(pageNum).addClass("active");   
-                }
             }catch(e){
                 return false;
             }
@@ -23,16 +19,9 @@ $(function(){
             try{
                 var next = $(this).next().offset().top;
                 if(next==0){ return false; }
-
-                var pageNum = Math.round(next/ht);
-                if(pageNum!=6){
-                    menu.removeClass().eq(pageNum).addClass("active");   
-                }
-                
             }catch(e){
                 return false;
             }
-
             $("html, body").stop().animate({scrollTop:next},1000);
         }        
     });
@@ -42,32 +31,32 @@ $(function(){
 	$(window).scroll(function(){
 		var scroll = Math.round($(window).scrollTop());
         
-        if(scroll>=ht*0 && scroll<ht*1){ //at1
+        if(scroll>=ht*0 && scroll<ht*0.05){ //at1
             menu.removeClass().eq(0).addClass("active");   
             var target = $("section").eq(0).children("article"); 
             text_Ani(target);
         }
-        if(scroll>=ht*1 && scroll<ht*2){ //at2
+        if(scroll>=ht*1 && scroll<ht*1.05){ //at2
             menu.removeClass().eq(1).addClass("active");   
             var target = $("section").eq(1).children("article"); 
             text_Ani(target);
         }
-        if(scroll>=ht*2 && scroll<ht*3){ //at3
+        if(scroll>=ht*2 && scroll<ht*2.05){ //at3
             menu.removeClass().eq(2).addClass("active");  
             var target = $("section").eq(2).children("article"); 
             text_Ani(target);
         }
-        if(scroll>=ht*3 && scroll<ht*4){ //at4
+        if(scroll>=ht*3 && scroll<ht*3.05){ //at4
             menu.removeClass().eq(3).addClass("active");   
             var target = $("section").eq(3).children("article"); 
             text_Ani(target);
         }
-        if(scroll>=ht*4 && scroll<ht*5){ //at5
+        if(scroll>=ht*4 && scroll<ht*4.05){ //at5
             menu.removeClass().eq(4).addClass("active");   
             var target = $("section").eq(4).children("article"); 
             text_Ani(target);
         }
-        if(scroll>=ht*5 && scroll<ht*6){ //at6
+        if(scroll>=ht*5 && scroll<ht*5.05){ //at6
             menu.removeClass().eq(5).addClass("active");   
             var target = $("section").eq(5).children("article"); 
             text_Ani(target);
@@ -118,6 +107,6 @@ function text_reset(t){
         $("section").eq(r_pageNum).children("article").find(".p_box>p").css("top","100%");
         $("section").eq(r_pageNum).children("article").find(".span_box>span").css("top","80px");
         $("section").eq(n_pageNum).children("article").find(".p_box>p").css("top","100%");
-        $("section").eq(n_pageNum).children("article").find(".span_box>span").css("top","80px");
+        $("section").eq(n_pageNum).children("article").find(".span_box>span").css("top","80px")
     }
 }

@@ -17,20 +17,18 @@ $(function(){
         if(delta>0){ //마우스 휠 올림
             try{
                 var prev = $(this).prev().offset().top;
-                
             }catch(e){
                 return false;
             }
             $("html, body").stop().animate({scrollTop:prev},1000);
             
         }else{ //마우스 휠 내림
-            
             try{
                 var next = $(this).next().offset().top;
-                var pageNum = Math.round(next/height);
+                // var pageNum = Math.round(next/height);
                 if(next==0){ return false; }
-                if(pageNum==1){at2Ani(); }
-                else if(pageNum==2){at3Ani(); }
+                // if(pageNum==1){at2Ani(); }
+                // else if(pageNum==2){at3Ani(); }
             }catch(e){
                 return false;
             }
@@ -134,12 +132,14 @@ $(function(){
         var scroll = Math.round($(window).scrollTop());
         var ht = $(window).height(); 
 
-        if(scroll>=ht*1 && scroll<ht*2){  at2Ani();}
-        if(scroll>=ht*2 && scroll<ht*3){  at3Ani();}
+        if(scroll>=ht*1 && scroll<ht*1.05){  var at2Ani_id = setTimeout(at2Ani(),50);}
+        if(scroll>=ht*2 && scroll<ht*2.05){  var at3Ani_id = setTimeout(at3Ani(),50);}
+        clearTimeout(at2Ani_id);
+        clearTimeout(at3Ani_id);
     });
+    
 
 });
-
 
 function at1Ani(){
     $(".at1>p").stop().animate({"top":"+=5%","opacity":"1"},1200);
@@ -152,6 +152,10 @@ function at2Ani(){
     $(".at2_bar>li:eq(3)>div").stop().animate({"width":"60%","opacity":"1"},1200);
 }
 
+var check = true;
 function at3Ani(){
-    $(".at3>p:eq(1)").stop().animate({"top":"+=5%","opacity":"1"},1200);
+    if(check){
+        $(".at3>p:eq(1)").stop().animate({"top":"+=5%","opacity":"1"},1200);
+        check=false;
+    }
 }

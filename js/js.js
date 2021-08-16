@@ -127,7 +127,6 @@ $(function(){
         var delta = 0;
         delta = e.originalEvent.wheelDelta/120; //기본으로 한번 마우스 휠 움직임의 값이 120정도
 
-        // var moveTop = null;
         if(delta>0){ //마우스 휠 올림
             try{
                 var prev = $(this).prev().offset().top;
@@ -156,19 +155,17 @@ $(function(){
         }
     })
 
-    //스크롤 이벤트
+    //스크롤 이벤트s
     $(window).scroll(function(){
 		var scroll = Math.round($(window).scrollTop());
         var ht = $(window).height(); //창 높이
-
+        
         if(scroll>=ht*0 && scroll<ht*1){ //at1
-            clearTimeout(init); //별 애니메이션 중지
 		}else if(scroll>=ht*1 && scroll<=ht*1.05 ){ //at2
             //0.05초후에 init호출(별 애니메이션)
-            setTimeout(init,50);
-            // if(scroll == ht*1){ setTimeout(init,50); }
+            var initId = setTimeout(init,50);
 		}else if(scroll>=ht*2 && scroll<ht*3){ //at3s
-            clearTimeout(init); //별 애니메이션 중지
+            clearTimeout(initId); //별 애니메이션 중지
             $(".at3>p").animate({"opacity":"1"},500);
             countfunc(); countfunc2(); //숫자 애니메이션
 		}else if(scroll>=ht*3 && scroll<ht*4){ //at4
@@ -243,7 +240,6 @@ $(function(){
         
     });
 
-    
   
     /*-----article3-----*/
     for(i=0; i<4; i++){

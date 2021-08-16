@@ -3,7 +3,7 @@ $(function(){
     $("#menu>li:gt(0)").hover(function(e){
         e.preventDefault();
         index = $("#menu>li").index(this); //1~5
-        // console.log(index);
+
         $("#menu>li:eq("+index+")>p").not($("#menu>li:eq(0)>a")).addClass("changed");
 
         $("#menu").css("background","white");
@@ -33,7 +33,7 @@ $(function(){
 	$(".submenu li").click(function(e){
         e.preventDefault();
         no=$(".submenu li").index(this); //모든 submenu의 li 모두 인덱스 구하기
-        // console.log(no);
+
         if(no==0){ //회사소개
             $(location).attr("href","introduce.html");
         }else if(no==1){ //연혁
@@ -90,7 +90,6 @@ $(function(){
         }
         
         $("#menu>li").unbind('mouseenter mouseleave'); //호버효과없애기
-        // $(".submenu").stop().slideUp(); //서브메뉴는 모두 닫아놓기
         $("#menu>li").click(function(){
             $(".submenu").stop().slideUp(); //서브메뉴는 모두 안보이게
 		

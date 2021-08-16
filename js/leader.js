@@ -4,13 +4,10 @@ $(function(){
         var delta = 0;
         delta = e.originalEvent.wheelDelta/120; //기본으로 한번 마우스 휠 움직임의 값이 120정도
         var height =$( window ).outerHeight();
-        // var moveTop = null;
+
         if(delta>0){ //마우스 휠 올림
             try{
                 var prev = $(this).prev().offset().top;
-                if(prev<0){ 
-                    
-                }
             }catch(e){
                 return false;
             }
@@ -21,7 +18,6 @@ $(function(){
             try{
                 var next = $(this).next().offset().top;
                 var pageNum = Math.round(next/height);
-                // console.log(pageNum)
                 if(next==0){ return false; }
                 if(pageNum==1){at2Ani(); at3Ani();}
                 else if(pageNum==2){ }

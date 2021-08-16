@@ -6,7 +6,6 @@ $(function(){
         tp1 = $(".tabCont1_1").offset().top;
         tp2 = $(".tabCont1_2").offset().top;
         tp3 = $(".tabCont1_3").offset().top;
-//        console.log(sct+"|"+tp1+"|"+tp2+"|"+tp3+"|");
         if(sct>tp1 && sct<tp2){
             line_Ani();
         }else if(sct>tp2){
@@ -21,7 +20,6 @@ $(function(){
     /*-------------------------------------- */
     //탭메뉴
     var tabBtn = $(".at1_box>.tabBtn").find("li");
-    // tabBtn.eq(0).css("border-bottom","4px solid #2c5bac");
     tabBtn.eq(0).find("a").css("color","#2c5bac");
 
     var tabCont = $(".tabCont>div");
@@ -53,7 +51,6 @@ $(function(){
         }
         
         tabBtn.css("border","none");
-        // tabBtn.eq(index).css("border-bottom","4px solid #2c5bac");
         tabBtn.find("a").css("color","rgb(126, 126, 126)");
         tabBtn.eq(index).find("a").css("color","#2c5bac");
     });

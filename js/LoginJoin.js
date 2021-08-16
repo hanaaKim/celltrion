@@ -175,10 +175,8 @@ function Idcheck(t){
                     $("#userId").focus();
                     return false;
                 }
-        
             }
         }
-
     }
 
     alert(id+"는 사용 가능한 ID입니다.")
