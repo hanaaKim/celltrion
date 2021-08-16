@@ -224,14 +224,12 @@ section article{
     position: relative; top:15%; left: 0;
     width: 100%; height: 180px;
     text-align: center; line-height: 180px; font-size: 4rem; 
-    /* outline: 1px solid red; */
     opacity: 0;
 }
 .at3>p:nth-child(2){
     position: relative; top:12%; left: 0;
     width: 100%; height: 60px; font-size: 1.3rem;
     text-align: center; line-height:2;
-    /* outline: 1px solid red; */
     opacity: 0;
 }
 
@@ -242,15 +240,13 @@ section article{
     display: flex;
 }
 .at3>ul>li{flex: 1; }
-.at3>ul>li>div{ position: relative; top:0; left: 50%; transform: translateX(-50%);
+.at3>ul>li>div{ 
+    position: relative; top:0; left: 50%; transform: translateX(-50%);
     width: 50px; height: 50px; margin-bottom: 10px; 
-    /* outline: 1px solid red; */
 }
 .at3>ul>li p{text-align: center; width: 100%; font-size: 1.1rem;}
 .at3>ul>li:nth-child(1)>p:nth-child(3){margin-top: 45px; line-height: 50px;}
-.at3>ul>li>p:nth-child(3){letter-spacing: 1px; height: 130px; line-height: 130px; font-size: 2rem; 
-    /* outline: 1px solid red; */
-}
+.at3>ul>li>p:nth-child(3){letter-spacing: 1px; height: 130px; line-height: 130px; font-size: 2rem; }
 .at3>ul>li>p:nth-child(3)>span{font-size:5.5rem; font-family: 'Anton', sans-serif;  }
 
 /*---------------------article4---------------------*/
@@ -261,7 +257,6 @@ section article{
 .at4 .at4_Box{
     position: absolute; bottom:60px; left:10%;
     width: 80%; height: 80%;
-    /* outline: 1px solid red; */
 }
 
 .at4_covidBtn{
@@ -297,7 +292,6 @@ section article{
     font-size: 10rem;
     font-family: 'Londrina Outline', cursive;
     color:white;
-    /* outline: 1px solid red; */
 }
 /* 슬라이드 텍스트 */
 .at4_txt{
@@ -310,7 +304,6 @@ section article{
     position: absolute; bottom:15px; right:0; 
     width: 110px; height: 50px;
     display: flex; justify-content: space-between;
-    /* outline: 1px solid red; */
 }
 
 .at4_Box .arrow li{
@@ -321,7 +314,7 @@ section article{
 .at4_Box .arrow li i{
     width: 100%; height: 100%;
     font-size: 3rem; line-height: 50px; text-align: center;
-    color: white;
+    color: white; cursor: pointer;
 }
 /*---------------------article5---------------------*/
 .at5{
@@ -362,7 +355,6 @@ section article{
     position: absolute; top:25%; left: 0;
     width: 100%; height: 0;
     background:rgba(255,2552,255,0.5); z-index: 2;
-    /* outline: 1px solid red; */
 }
 
 /* 서브 메뉴 박스 */
@@ -377,7 +369,6 @@ section article{
     width: 100%; height: 20px;
     margin-bottom: 15px;
     text-align: left;
-    /* outline: 1px solid red; */
     text-indent: 15px; line-height: 20px;
     border-left: 3px solid white;
 }
@@ -390,15 +381,12 @@ section article{
     cursor: pointer;
 }
 
-.at5>div>ul>li:last-child(4)>span{
-    text-indent: 60px;
-}
+.at5>div>ul>li:last-child(4)>span{ text-indent: 60px;}
 
 
 /*----------미디어쿼리---------- */
 @media screen and (min-width: 768px) and (max-width:1023px){   
     /* 테블릿 */
-
     /* article */
     article{ max-width: 1023px; height: 100%;}
     /* 슬라이드 텍스트 */
@@ -417,8 +405,6 @@ section article{
     .at5>div>h2{font-size: 1.5rem;}
     /* 서브 메뉴 박스 */
     .at5>div>ul{font-size: 1.3rem; }
-
-
 }
 
 @media screen and (max-width:767px){   
@@ -436,13 +422,11 @@ section article{
         width: 80% !important;
         margin-left: 10%;
         font-size: 2.4rem;
-        /* outline: 1px solid red; */
     }
     .at1 .slideList .slideImg .slide_Subtxt{
         position: relative; left: 0 !important;
         width: 80%; margin-left: 10%;
         font-size: 1rem; 
-        /* outline: 1px solid red; */
     }
 
     /* 슬라이드 원  */
@@ -484,7 +468,6 @@ section article{
     .at4 .at4_Box{
         position: absolute; top:50px; left:10%;
         height: 550px;
-        /* outline: 1px solid red; */
     }
 
     .at4_covidBtn{
@@ -498,7 +481,6 @@ section article{
     .at4_slideBox{
         position: relative; top:80px; left:0;
         width:100%; height: 200px;
-        /* outline: 1px solid red; */
     }
 
     .at4_slideBox .at4_slidelist .at4_slideImg img{width: 100%; height: 100%;}
@@ -508,33 +490,29 @@ section article{
         position: absolute; top:0; right: 0;
         z-index: 2; color:black;
         font-size: 8rem;
-        /* outline: 1px solid red; */
-
     }
     /* 슬라이드 텍스트 */
     .at4_txt{
         position: absolute; top:300px; left: 0;
         width: 100%; font-size: 1rem; line-height: 1.8;
-        /* outline: 1px solid red;  */
     }
     .at4_txt>span:nth-child(1){ font-size: 1.5rem;}
     /* 화살표 */
     .at4_Box>.arrow{
         position: absolute; bottom:0; right:0; 
         width: 90px; height: 40px;
-        /* outline: 1px solid red;  */
+       
     }
 
     .at4_Box .arrow li{
-        width: 40px;
+        width: 40px; 
     }
-    .at4_Box .arrow li i{ font-size: 2.5rem; line-height: 40px;  }
+    .at4_Box .arrow li i{ font-size: 2.5rem; line-height: 40px;}
         
     /* 아코디언 박스4개 */
     .at5>div{ width: 20%;  }
     /* 각 타이틀 */
     .at5>div>h2{ font-size: 1rem;  }
-    /* 각 타이틀 감싸는 박스 */
    
     /* 서브 메뉴 박스 */
     .at5>div>ul{

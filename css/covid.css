@@ -36,7 +36,6 @@ section article{
     background: url(../img/covid/img7.jpg) no-repeat center center;
     background-size: cover;
     float: left;
-    /* outline: 1px solid white; */
 }
 
 .pic::after{
@@ -52,7 +51,6 @@ section article{
     top:42%; right: 7%;
     width: 35%; color: #ddd;
     float: left;
-    /* outline: 1px solid white; */
 }
 .at2>ul>li{height: 80px;}
 .at2>ul>li>p{padding: 5px 0; font-size:1.2rem;}
@@ -135,7 +133,7 @@ section article{
 .at4>ul>li{
     position: relative;
     top:0; left: 0;
-    flex:0 0 30%;
+    flex:0 0 30%; cursor: pointer;
 }
 
 .at4>ul>li::after{
@@ -285,7 +283,6 @@ section article{
         position: relative; 
         top:25%; left: 10%;
         width: 80%;
-        /* outline: 1px solid blue; */
     }
     .at2>ul>li{height: 50px; padding: 10px 0; }
     .at2>ul>li:after{ content: ''; display: block; clear: both; }
@@ -293,7 +290,6 @@ section article{
         float: left;
         padding: 0;  
         font-weight: bold;
-        /* outline: 1px solid red; */
         display: block; width: 40%; height: 100%;
         font-size: 1rem; line-height: 30px;
     }
@@ -329,7 +325,6 @@ section article{
         position: relative;
         top:20%; left: 10%;
         width: 80%; height: 70%;
-        /* outline: 1px solid red; */
         flex-direction: column;
     }
 

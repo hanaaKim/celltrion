@@ -1,5 +1,4 @@
 @import "reset.css"; 
-/* body{ background: coral;} */
 header{ 
     position: fixed; 
     top:0; left: 0;
@@ -86,7 +85,6 @@ header{
 /*----------미디어쿼리---------- */
 /* 테블릿 */
 @media screen and (min-width: 768px) and (max-width:1023px){   
-    /* body{ background: palegoldenrod;} */
     header{height: 60px;}
     #menu{ height: 60px; }
     #menu>li>p{
@@ -111,7 +109,6 @@ header{
 
 /* 모바일 */
 @media screen and (max-width:767px){   
-    /* body{ background: paleturquoise;} */
 
     header{ height: auto; }
     #menu{ width: 70%;  height: auto; margin-left: 15%;}

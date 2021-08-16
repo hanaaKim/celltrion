@@ -1,7 +1,5 @@
 @import "reset.css"; 
 /* 기본 font-size : 13px */
-
-
 /* article */
 section article{
     position: relative;
@@ -152,7 +150,7 @@ section article{
 @media screen and (max-width:767px){  
     /*---------------------article1---------------------*/
     .at1 .cont_img1{
-        top:0; left:-100%;
+        top:0; left:100%;
         width: 100%; height: 50%;
     }
     .at1 .txt1,.at2 .txt2,.at3 .txt3,.at4 .txt4{ top:55%; left: 5%;}

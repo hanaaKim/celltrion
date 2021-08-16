@@ -18,7 +18,6 @@ section article{
 .at1_box{
     position: relative;
     margin: 5% 15% 0 15%; width: 70%; height: 45%;
-    /* outline: 1px solid red;  */
 }
 .at1_box span{
     position: relative; top:-17px; left:0;
@@ -28,7 +27,6 @@ section article{
     margin-right: 10px;
 }
 .at1_box p:nth-child(2){
-    /* outline: 1px solid red; */
     display: inline-block;
     font-size: 5rem; padding-top:50px; 
     text-shadow: 3px 5px 5px rgb(0 0 0 / 50%);
@@ -79,7 +77,6 @@ section article{
 .tabCont_txt:after{ content: ''; clear: both; display: block;}
 .tabCont_txt li{
     float: left; 
-    /* outline:1px solid red; */
     padding: 3% 5%;
     
 }
@@ -115,7 +112,6 @@ section article{
 
 .tabCont1_1 .tabCont1_box ul:nth-child(3) li{
     flex: 1; color:#ccc;
-    /* outline: 1px solid red; */
     text-align: center; line-height: 30px;
 }
 
@@ -169,7 +165,6 @@ section article{
     position: relative; top:50px; left:50%;
     transform: translateX(-50%);
     width: 80%; height: 230px;
-    /* outline: 1px solid red; */
     border-left: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     display: flex;
@@ -225,7 +220,6 @@ section article{
 
 .tabCont1_3>.tabCont1_box>ul>li:nth-child(2)>ul>li:nth-child(2)>span{  
     width: 100%; height: 30px; text-align: center; line-height: 30px; display: block;
-    /* outline: 1px solid red; */
 }
 
 .tabCont1_3>.tabCont1_box>ul>li:nth-child(2)>ul>li:nth-child(2)>span>span{  display: inline-block; height: 30px;} 
@@ -243,7 +237,6 @@ section article{
     position: relative;
     top:0; left:0;
     width: 100%; height: 100%;
-    /* outline: 1px solid blue; */
 }
 
 .tabCont2_1 > .tabCont1_box> .slideBox>li{

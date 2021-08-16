@@ -55,9 +55,7 @@
 
 /*-------------------약관동의 박스-------------------*/
 .cont1>ul{width: 100%; }
-.cont1>ul>li{  width: 100%; margin-bottom: 10px;
-/* outline: 1px solid red; */
-}
+.cont1>ul>li{  width: 100%; margin-bottom: 10px;}
 
 /* 첫번째 li - 모든 약관 동의 */
 .cont1>ul>li:first-child{ 
@@ -74,7 +72,6 @@
 .cont1>ul>li:first-child>span{
     display: inline-block;
     line-height: 50px; font-size: 1.2rem;
-
 }
 /* 나머지 li */
 .cont1>ul>li>p{
@@ -106,22 +103,18 @@
 .join_nextBtn:hover,.join_SuccessBtn:hover{ background: #ccc;}
 
 /*-------------------회원 정보입력 박스-------------------*/
-.cont2 form{width: 85%; margin: auto; padding: 20px 0;
-    /* outline: 1px solid blue; */
-}
+.cont2 form{width: 85%; margin: auto; padding: 20px 0;}
 /* 폼 박스의 한줄한줄 p태그 */
 .cont2 form p{
     position: relative;
     width: 100%; 
     margin-bottom: 40px;
-    /* outline: 1px solid red; */
 }
 /* 각 칸의 이름 */
 .cont2 form p span.title{ 
     display: inline-block;
     width:25%; height: 100%; 
     font-size: 1.2rem; 
-    /* outline: 1px solid green; */
 }
 .cont2 form p input[type="text"],.cont2 form p input[type="password"]{ 
     display: inline-block;
@@ -131,7 +124,6 @@
     border:none; outline: none;
     border-bottom: 1px solid #ccc;
     background: transparent;
-    /* outline: 1px solid orange; */
 }
 .cont2 form p input[type="button"]{
     display: inline-block;

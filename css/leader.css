@@ -9,7 +9,6 @@ section{
 article{
     width: 100%;
     background:white;
-    /* position: relative; */
     overflow: hidden;
 }
 
@@ -23,18 +22,15 @@ article{
 .at1_box{
     margin: 250px 15% 0 15%;
     width:70%; 
-    /* outline: 1px solid red; */
 }
 .at1_box>span{
     position: relative; top:-17px; left:0;
     display: inline-block;
-    /* outline: 1px solid red; */
     width: 40px; 
     border-bottom: 3px solid #f38d36;
     margin-right: 10px;
 }
 .at1_box>p:nth-child(2){
-    /* outline: 1px solid red; */
     display: inline-block;
     font-size: 5rem;
     text-shadow: 3px 5px 5px rgb(0 0 0 / 50%);
@@ -54,8 +50,6 @@ article{
 .at2 .at_bg .at_box{
     position: relative; top:0; left: -40%;
     width: 80%; height: 100%;
-    /* outline: 1px solid red; */
-    /* display: none; */
 }
 .at2 .cont_box{
     position: relative; top:0; left:0;
@@ -73,7 +67,6 @@ article{
 .at_box p:nth-child(3){
     display: inline-block;
     font-size: 1.3rem; padding-top: 80px; color:#525252;
-    /* outline: 1px solid red; */
 }
 .at_box span{
     position: relative;
@@ -81,7 +74,6 @@ article{
     display:inline-block;
     width: 30px; height: 30px; margin-left: 10px;
     cursor: pointer;
-    /* outline: 1px solid red; */
 }
 
 .at_box span i{
@@ -102,8 +94,6 @@ article{
     position: relative; top:0; left: 62%;
     width: 80%; height: 100%;
     text-align: right;
-    /* outline: 1px solid red; */
-    /* display: none; */
 }
 .at3 .cont_box{
     position: relative; top:0; left:0;
@@ -111,7 +101,6 @@ article{
     background: #ebf2f6; line-height: 1.5;
     display: none;
 }
-
 
 /*----------미디어쿼리---------- */
 /* 테블릿 */
@@ -133,7 +122,6 @@ article{
     .at2 .at_bg .at_box{
         position: relative; top:60%; left: 5%;
         width: 80%; height: auto;
-        /* outline: 1px solid red; */
     }
 
     /* article2, article3 공통  */
@@ -152,8 +140,6 @@ article{
     .at3 .at_bg .at_box{
         position: relative; top:60%; left: 15%;
         width: 80%; height: auto;
-        /* outline: 1px solid red; */
-        /* display: none; */
     }
 
 }
