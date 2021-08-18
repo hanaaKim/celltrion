@@ -100,7 +100,9 @@ section article{
 .at2 .at2_box li:nth-child(2):after{content:'원칙준수';}
 .at2 .at2_box li:nth-child(3):after{content:'도전정신';}
 .at2 .at2_box li:nth-child(4):after{content:'세계제일주의';}
-.at2 .at2_box li:hover:after{ top:40px;}
+
+.at2 .at2_box li.changed::after{ top:40px; } /*모바일 호버 대신 클릭, jquery로*/
+.at2 .at2_box li:hover:after{ top:40px; }
 
 .at2 div{
     position: absolute;
