@@ -30,6 +30,13 @@ $(function(){
     for(i=0; i<4;i++){
         $(".at3_cont2 ul li:eq("+i+") div").css({"background":"url(img/introduce/icon"+i+".png) no-repeat center center","backgroundSize":"contain"});
     }
-    
+   
+    // 모바일일때, 호버 이벤트 대신
+    $(".at2_box li").on({
+        click:function(){
+            $(".at2_box li").removeClass("changed");
+            $(this).addClass("changed");
+        },
+    })
 });
 
